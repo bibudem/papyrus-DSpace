@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE item-submission SYSTEM "item-submission.dtd"
-    [
-        <!ENTITY papyrus-is-name-map SYSTEM "papyrus-is-name-map.xml">
-        <!ENTITY papyrus-is-sd-standard SYSTEM "papyrus-is-sd-standard.xml">
-        <!ENTITY papyrus-is-sp-standard SYSTEM "papyrus-is-sp-standard.xml">
-    ]
->
+<!DOCTYPE item-submission SYSTEM "item-submission.dtd">
 
 <!-- Configurable Submission configuration file -->
 
@@ -25,7 +19,12 @@
     <submission-map>
         <!-- Default submission process -->
         <name-map collection-handle="default" submission-name="traditional"/>
-        &papyrus-is-name-map;
+
+        <!--    Le processus lié à Papyrus - Thèmes et mémoire
+                La définition est dans le fichier papyrus-is-sp-TME.xml
+        -->
+        <name-map collection-handle="123456789/5" submission-name="papyrus-TME"/>   <!-- Collection de test, locale MS -->
+
 
         <!-- Sample Entities Collection configuration based on the demo Entities dataset available at:
              https://github.com/DSpace-Labs/AIP-Files/releases/tag/demo-entities-data
@@ -95,7 +94,13 @@
     <!-- Messages.properties -->
     <!-- -->
     <step-definitions>
-        &papyrus-is-sd-standard;
+
+        <!-- Premier bloc de description pour Papyrus TME -->
+        <step-definition id="papyrus-TME-form-page-01">
+            <heading>papyrus-TME.page-01</heading>
+            <processing-class>org.dspace.app.rest.submit.step.DescribeStep</processing-class>
+            <type>submission-form</type>
+        </step-definition>
         <!-- The "collection" step is a "special step" which is *REQUIRED* -->
         <!-- In DSpace, all submitted items must be immediately assigned -->
         <!-- to a collection. This step ensures that a collection is always selected. -->
@@ -257,7 +262,26 @@
     <!-- -->
     <submission-definitions>
 
-        &papyrus-is-sp-standard;
+        <!-- Le processus de soumissions pour Papyrus TME -->
+        <submission-process name="papyrus-TME">
+
+            <!-- TODO: vérifier si la première étape doit toujours être collection -->
+            <step id="collection"/>
+
+            <!-- On inscrit l'acception de la licence en premier -->
+            <!-- TODO: vérifier si la méthode standard DSpace est correcte -->
+            <step id="license"/>
+
+            <!-- Ensuite on décrit l'objet -->
+            <step id="papyrus-TME-form-page-01"/>
+
+            <!-- Le chargement des fichiers (TODO: vérifier si ça conserve quand même
+                    l'emplacement pour déposer en haut de page)-->
+            <step id="upload"/>
+
+            <!-- TODO: dans Papyrus 5.8, il y a un "verify" -->
+
+        </submission-process>
 
         <!--This "traditional" process defines the DEFAULT item submission process -->
         <submission-process name="traditional">
