@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE input-forms SYSTEM "submission-forms.dtd">
 
-
 <input-forms>
 
     <!-- The form-definitions map lays out the detailed definition of all the -->
@@ -21,6 +20,55 @@
     <!-- serves as a 'this field is required' flag.                           -->
 
     <form-definitions>
+
+        <!-- Le premier bloc de description pour les TME -->
+        <form name="papyrus-TME-form-page-01">
+
+            <!-- L'embargo -->
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>date</dc-element>
+                    <dc-qualifier>available</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Embargo</label>
+                    <input-type value-pairs-name="TME-embargo-valeurs">dropdown</input-type>
+                    <hint>
+                        Vous devez préalablement avoir complété et remis à votre unité le formulaire    
+                        <a href="http://www.fesp.umontreal.ca/fileadmin/Documents/Cheminement/Formulaires/delai_de_diffusion.pdf" target="_blank"><i>Délai de diffusion (embargo) d'un mémoire ou d'une thèse</i></a>
+                        pour pouvoir choisir l'une des options d'embargo ci-dessus sinon votre dépôt sera refusé. <a href="http://www.bib.umontreal.ca/theses/depot-final.htm#confidentialite-embargo" target="_blank">(Plus de détails...)</a><br/>
+                        <i>Information pratique : que la diffusion de la thèse ou du mémoire soit retardée ou non, les métadonnées (auteur, titre, résumé, mots-clés…) seront diffusées sans délai</i>.
+                    </hint>
+                    <required/>
+                </field>
+            </row>
+
+            <!-- Le titre -->
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>title</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Titre</label>
+                    <input-type>textarea</input-type>
+                    <hint>
+                            Entrez le titre de votre thèse ou de votre mémoire tel qu'il apparaît sur la page de titre. Ne pas ajouter un point final (à l'exception des abréviations). Veillez à séparer le titre du sous-titre par le deux-points le cas échéant.<br/>
+                            Nous vous recommandons de saisir des caractères Unicode pour les symboles et caractères non-latins dans les champs titre/résumés/mots-clés.<br/>
+                            Ex.: (1) <i>Robust H∞ stabilization of stochastic hybrid systems with wiener process</i><br />
+                                (2) <i>Diffusions élastiques α-α et α-Li⁶ par la méthode de la coordonnée génératrice</i><br />     
+                                <br />Si vous préférez, vous pouvez également saisir du code LaTeX, notamment pour les formules mathématiques plus complexes ou qui ne pourraient être rendues avec les moyens mentionnés plus haut. Le code LaTeX est interprété entre les balises <code>\<span>(...\</span>)</code> sur une ligne et <code>$<span>$...$</span>$</code> pour un rendu en bloc.<br />
+                            Ex.: (1) <code>\<span>(f(n) \notin \Theta(g(n))\</span>)</code> se transforme en \(f(n) \notin \Theta(g(n))\) sur la même ligne.<br />
+                                    (2) <code>$<span>$f(n) \notin \Theta(g(n))$</span>$</code> affichera la même formule mais dans un bloc détaché du paragraphe.
+                    </hint>
+                    <required>Vous devez inscrire le titre de votre thèse ou de votre mémoire.</required>
+                </field>
+            </row>
+
+            <!-- TODO: compléter le formulaire -->
+
+        </form>
+
         <!-- Form used for entering in Bitstream/File metadata after uploading a file -->
         <form name="bitstream-metadata">
             <row>
@@ -1365,6 +1413,30 @@
     <!-- stores the associated stored-values in the database.                  -->
 
     <form-value-pairs>
+
+        <value-pairs value-pairs-name="TME-embargo-valeurs" dc-term="date.available">
+            <pair>
+                <displayed-value>Diffusion immédiate du document</displayed-value>
+                <stored-value>NO_RESTRICTION</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Diffusion du document après 6 mois</displayed-value>
+                <stored-value>MONTHS_WITHHELD:6</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Diffusion du document après 1 an</displayed-value>
+                <stored-value>MONTHS_WITHHELD:12</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Diffusion du document après 2 ans</displayed-value>
+                <stored-value>MONTHS_WITHHELD:24</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Diffusion du document après 5 ans</displayed-value>
+                <stored-value>MONTHS_WITHHELD:60</stored-value>
+            </pair>
+        </value-pairs>
+
         <value-pairs value-pairs-name="common_identifiers" dc-term="identifier">
             <pair>
                 <displayed-value>ISSN</displayed-value>
