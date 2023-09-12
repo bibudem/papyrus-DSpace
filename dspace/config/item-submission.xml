@@ -95,12 +95,18 @@
     <!-- -->
     <step-definitions>
 
-        <!-- Premier bloc de description pour Papyrus TME -->
+        <!-- Premier et deuxième bloc de description pour Papyrus TME -->
         <step-definition id="papyrus-TME-form-page-01">
             <heading>papyrus-TME.page-01</heading>
             <processing-class>org.dspace.app.rest.submit.step.DescribeStep</processing-class>
             <type>submission-form</type>
         </step-definition>
+        <step-definition id="papyrus-TME-form-page-02">
+            <heading>papyrus-TME.page-02</heading>
+            <processing-class>org.dspace.app.rest.submit.step.DescribeStep</processing-class>
+            <type>submission-form</type>
+        </step-definition>
+
         <!-- The "collection" step is a "special step" which is *REQUIRED* -->
         <!-- In DSpace, all submitted items must be immediately assigned -->
         <!-- to a collection. This step ensures that a collection is always selected. -->
@@ -272,8 +278,9 @@
             <!-- TODO: vérifier si la méthode standard DSpace est correcte -->
             <step id="license"/>
 
-            <!-- Ensuite on décrit l'objet -->
+            <!-- Ensuite on décrit l'objet, première et deuxième partie -->
             <step id="papyrus-TME-form-page-01"/>
+            <step id="papyrus-TME-form-page-02"/>
 
             <!-- Le chargement des fichiers (TODO: vérifier si ça conserve quand même
                     l'emplacement pour déposer en haut de page)-->
