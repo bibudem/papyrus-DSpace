@@ -34,10 +34,10 @@
                     <label>Embargo</label>
                     <input-type value-pairs-name="TME-embargo-valeurs">dropdown</input-type>
                     <hint>
-                        Vous devez préalablement avoir complété et remis à votre unité le formulaire    
-                        <a href="http://www.fesp.umontreal.ca/fileadmin/Documents/Cheminement/Formulaires/delai_de_diffusion.pdf" target="_blank"><i>Délai de diffusion (embargo) d'un mémoire ou d'une thèse</i></a>
-                        pour pouvoir choisir l'une des options d'embargo ci-dessus sinon votre dépôt sera refusé. <a href="http://www.bib.umontreal.ca/theses/depot-final.htm#confidentialite-embargo" target="_blank">(Plus de détails...)</a><br/>
-                        <i>Information pratique : que la diffusion de la thèse ou du mémoire soit retardée ou non, les métadonnées (auteur, titre, résumé, mots-clés…) seront diffusées sans délai</i>.
+                            You must fill out and hand in to your department a copy of the form    
+                            <a href="http://www.fesp.umontreal.ca/fileadmin/Documents/Cheminement/Formulaires/delai_de_diffusion.pdf" target="_blank"><i>Délai de diffusion (embargo) d'un mémoire ou d'une thèse</i></a>
+                            before selecting one of the embargo options otherwise it will be refused. <a href="http://www.bib.umontreal.ca/theses/depot-final.htm#confidentialite-embargo" target="_blank">(More info...)</a><br/>
+                            <i>Please note: The embargo will only delay access to the document. The metadata (author, title, abstracts, keywords) will be publicly available</i>.
                     </hint>
                     <required/>
                 </field>
@@ -50,22 +50,235 @@
                     <dc-element>title</dc-element>
                     <dc-qualifier></dc-qualifier>
                     <repeatable>false</repeatable>
-                    <label>Titre</label>
+                    <label>Title</label>
                     <input-type>textarea</input-type>
                     <hint>
-                            Entrez le titre de votre thèse ou de votre mémoire tel qu'il apparaît sur la page de titre. Ne pas ajouter un point final (à l'exception des abréviations). Veillez à séparer le titre du sous-titre par le deux-points le cas échéant.<br/>
-                            Nous vous recommandons de saisir des caractères Unicode pour les symboles et caractères non-latins dans les champs titre/résumés/mots-clés.<br/>
-                            Ex.: (1) <i>Robust H∞ stabilization of stochastic hybrid systems with wiener process</i><br />
-                                (2) <i>Diffusions élastiques α-α et α-Li⁶ par la méthode de la coordonnée génératrice</i><br />     
-                                <br />Si vous préférez, vous pouvez également saisir du code LaTeX, notamment pour les formules mathématiques plus complexes ou qui ne pourraient être rendues avec les moyens mentionnés plus haut. Le code LaTeX est interprété entre les balises <code>\<span>(...\</span>)</code> sur une ligne et <code>$<span>$...$</span>$</code> pour un rendu en bloc.<br />
-                            Ex.: (1) <code>\<span>(f(n) \notin \Theta(g(n))\</span>)</code> se transforme en \(f(n) \notin \Theta(g(n))\) sur la même ligne.<br />
-                                    (2) <code>$<span>$f(n) \notin \Theta(g(n))$</span>$</code> affichera la même formule mais dans un bloc détaché du paragraphe.
+                            Enter the title of your thesis or dissertation as written on your front page. Do not add a period at the end of the title (exception for abbreviations). Use a colon and a space to separate title from subtitle.<br/>
+                            We recommend entering Unicode characters for symbols and non-latin characters in the title/summary/keyword fields.<br/>
+                            E.g.: (1) <i>Robust H∞ stabilization of stochastic hybrid systems with wiener process</i><br />
+                            (2) <i>Diffusions élastiques α-α et α-Li⁶ par la méthode de la coordonnée génératrice</i><br />
+                            <br/>If you prefer, you can also enter LaTeX code, especially for more complex mathematical formulas or formulas that could not be rendered with the aforementioned means. The LaTeX code is interpreted between <code>\<span>(...\</span>)</code> tags and between <code>$<span>$...$</span>$</code> tags for block rendering.<br />
+                            E.g.: (1) <code>\<span>(f(n) \notin \Theta(g(n))\</span>)</code> becomes \(f(n) \notin \Theta(g(n))\) inline.<br />
+                            (2) <code>$<span>$f(n) \notin \Theta(g(n))$</span>$</code> will display the same formula in a separate block.
                     </hint>
                     <required>Vous devez inscrire le titre de votre thèse ou de votre mémoire.</required>
                 </field>
             </row>
 
-            <!-- TODO: compléter le formulaire -->
+            <!-- L'auteur -->
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>contributor</dc-element>
+                    <dc-qualifier>author</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Author</label>
+                    <input-type>name</input-type>
+                    <hint>
+                            Enter your last and (complete) first name as written on the title page of your thesis or dissertation.
+                    </hint>
+                    <required>You must provide your first and last name.</required>
+                </field>
+            </row>
+
+            <!-- L'identifiant ORCID de l'auteur -->
+            <row>
+                <field>
+                    <dc-schema>UdeM</dc-schema>
+                    <dc-element>ORCIDAuteurThese</dc-element>
+                    <repeatable>false</repeatable>
+                    <label>ORCID ID</label>
+                    <input-type>onebox</input-type>
+                    <hint>
+                            Enter, if you have one, your ORCID ID. Ex.: <b>0000-0002-1825-0097</b>.<br/>
+                            For more information on the ORCID ID, please visit the <a href="http://orcid.org" target="_blank">web site</a>.
+                    </hint>
+                </field>
+            </row>
+
+            <!-- Le grade visé -->
+            <row>
+                <field>
+                    <dc-schema>etd</dc-schema>
+                    <dc-element>degree</dc-element>
+                    <dc-qualifier>name</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Degree</label>
+                    <input-type value-pairs-name="TME-grade-valeurs">dropdown</input-type>
+                    <hint>
+                            Select the degree you will be granted upon completion of your programme.<br/>
+                            If necessary, consult the <a href="https://registraire.umontreal.ca/documents-officiels/abreviations-et-appellations-des-grades-et-des-diplomes/" target="_blank">Office of the Registrar web site</a>.
+                    </hint>
+                    <required>You must select a degree.</required>
+                </field>
+            </row>
+
+            <!-- Le programme d'étude -->
+            <row>
+                <field>
+                    <dc-schema>etd</dc-schema>
+                    <dc-element>degree</dc-element>
+                    <dc-qualifier>discipline</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Programme</label>
+                    <input-type value-pairs-name="TME-programme-valeurs">dropdown</input-type>
+                    <hint>Select the name of the programme in which you are registered from the following list. It should be the same as the one appearing on the cover of your thesis or dissertation.</hint>
+                    <required>You must choose the name of your program.</required>
+                </field>
+            </row>
+
+            <!-- Le cycle d'étude -->
+            <row>
+                <field>
+                    <dc-schema>etd</dc-schema>
+                    <dc-element>degree</dc-element>
+                    <dc-qualifier>level</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Study level</label>
+                    <input-type value-pairs-name="TME-cycle-valeurs">dropdown</input-type>
+                    <hint>Select the level of study of your programme.</hint>
+                    <required>You must select between the two level of study.</required>
+                </field>
+            </row>
+
+            <!-- La date de dépôt -->
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>date</dc-element>
+                    <dc-qualifier>submitted</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Document date</label>
+                    <input-type>date</input-type>
+                    <hint>Enter the date (month + year) of submission for your thesis or dissertation as it appears on the title page of your document.</hint>
+                    <required>You must enter the document date.</required>
+                </field>
+            </row>
+
+            <!-- Le directeur ou la directrice de recherche -->
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>contributor</dc-element>
+                    <dc-qualifier>advisor</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Advisor(s)</label>
+                    <input-type>name</input-type>
+                    <hint>
+                            Enter the last and complete first name of your advisor(s).<br/>
+                            Use the "Add" button to add a co-advisor. <b>Do not add the names of other jury members</b>.
+                    </hint>
+                    <required>You must ad the name of your advisor.</required>
+                </field>
+            </row>
+
+            <!-- La langue -->
+            <row>
+                <field>
+                    <dc-schema>dcterms</dc-schema>
+                    <dc-element>language</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>false</repeatable>
+                    <label>Language</label>
+                    <input-type value-pairs-name="papyrus-langue-valeurs">dropdown</input-type>
+                    <hint>
+                            Select the primary language in which your thesis or dissertation is written. 
+                            The primary language is the one used in the introduction and conclusion if your document includes articles in a different language.
+                    </hint>
+                    <required>You must select a language.</required>
+                </field>
+            </row>
+
+        </form>
+
+        <!-- La deuxième partie du formulaire de dépôt TME -->
+        <form name="papyrus-TME-form-page-02">
+
+            <!-- Les mots-clés -->
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>subject</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>true</repeatable>
+                    <label>Keywords</label>
+                    <input-type>tag</input-type>
+                    <hint>
+                            Enter each French and English subject keywords that you included in your thesis or dissertation. Only use capital letters for the first letter of each keyword and for proper nouns. <b>Use one text box for each keyword</b>. Click on the "Add" button to add more boxes. One keyword can however contains several words e.g. "<i>North Atlantic Treaty Organization</i>" (view <a target="_blank" href="http://www.bib.umontreal.ca/images/theses/MAJ5.x/ajoutermots-cles.jpg">online example</a>).
+                    </hint>
+                    <required>You must enter the keywords.</required>
+                </field>
+            </row>
+
+            <!-- Le sujet UMI -->
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>subject</dc-element>
+                    <dc-qualifier>other</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>ProQuest/UMI subject</label>
+                    <input-type value-pairs-name="TME-sujet-UMI-valeurs">dropdown</input-type>
+                    <hint>
+                            To increase the discoverability of your thesis or dissertation, choose the primary subject of your thesis or dissertation from the following
+                            standardized <a target="_blank"  href="https://about.proquest.com/globalassets/proquest/files/pdf-files/subject-categories-academic.pdf">subject list provided by ProQuest/UMI</a>.
+                    </hint>
+                    <required>You must select a subject from the list.</required>
+                </field>
+            </row>
+
+            <!-- Les résumés -->
+            <row>
+                <field>
+                    <dc-schema>dcterms</dc-schema>
+                    <dc-element>abstract</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>true</repeatable>
+                    <label>Abstracts</label>
+                    <input-type>textarea</input-type>
+                    <hint>
+                            Enter the French abstract of your thesis or dissertation. Then click on the "Add" button and enter the English abstract.
+                            <br/>If any, add abstracts in other languages in distinct text boxes.
+                    </hint>
+                    <required>You must enter both abstracts.</required>
+                </field>
+            </row>
+
+            <!-- Ensemble de données lié -->
+            <row>
+                <field>
+                    <dc-schema>dcterms</dc-schema>
+                    <dc-element>relation</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>true</repeatable>
+                    <label>Related research dataset(s)</label>
+                    <input-type>tag</input-type>
+                    <hint>
+                            If you wish to refer a research dataset linked to your thesis or dissertation, enter here the identifier (DOI or URL) of this dataset.<br/>
+                            Use the "Add" button to add a link to a another dataset.<br/>
+                            Ex.: doi:10.5683/SP2/9EBRRR<br/>
+                            For more information on data sharing, consult the <a href="https://bib.umontreal.ca/gerer-diffuser/gestion-donnees-recherche">Libraries guide on research data management</a> [fr].
+                    </hint>
+                    <required/>
+                </field>
+            </row>
+
+            <!-- Notes -->
+            <row>
+                <field>
+                    <dc-schema>dcterms</dc-schema>
+                    <dc-element>description</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>false</repeatable>
+                    <label>Note(s)</label>
+                    <input-type>textarea</input-type>
+                    <hint>
+                            If necessary, enter any complementary information related to your document. E.g. co-mentorship. This information will be disclosed publicly.
+                            In the specific case of creative dissertations, please enter here "Mémoire en recherche-création / Creative dissertation" (using this exact syntax).
+                    </hint>
+                    <required/>
+                </field>
+            </row>
 
         </form>
 
@@ -1416,24 +1629,2445 @@
 
         <value-pairs value-pairs-name="TME-embargo-valeurs" dc-term="date.available">
             <pair>
-                <displayed-value>Diffusion immédiate du document</displayed-value>
+                <displayed-value>Immediate access</displayed-value>
                 <stored-value>NO_RESTRICTION</stored-value>
             </pair>
             <pair>
-                <displayed-value>Diffusion du document après 6 mois</displayed-value>
+                <displayed-value>Access restricted for 6 months</displayed-value>
                 <stored-value>MONTHS_WITHHELD:6</stored-value>
             </pair>
             <pair>
-                <displayed-value>Diffusion du document après 1 an</displayed-value>
+                <displayed-value>Access restricted for 1 year</displayed-value>
                 <stored-value>MONTHS_WITHHELD:12</stored-value>
             </pair>
             <pair>
-                <displayed-value>Diffusion du document après 2 ans</displayed-value>
+                <displayed-value>Access restricted for 2 years</displayed-value>
                 <stored-value>MONTHS_WITHHELD:24</stored-value>
             </pair>
             <pair>
-                <displayed-value>Diffusion du document après 5 ans</displayed-value>
+                <displayed-value>Access restricted for 5 years</displayed-value>
                 <stored-value>MONTHS_WITHHELD:60</stored-value>
+            </pair>
+        </value-pairs>
+
+        <!-- Le grade visé (normal qu'il ne soit pas traduit) -->
+        <value-pairs value-pairs-name="TME-grade-valeurs" dc-term="etd.degree.name">
+            <pair>
+                <displayed-value>M.A.</displayed-value>
+                <stored-value>M.A.</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>M.A.P.</displayed-value>
+                <stored-value>M.A.P.</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>M. Sc.</displayed-value>
+                <stored-value>M. Sc.</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>M. Sc. A.</displayed-value>
+                <stored-value>M. Sc. A.</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Pharm. D.</displayed-value>
+                <stored-value>Pharm. D.</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Ph. D.</displayed-value>
+                <stored-value>Ph. D.</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>LL. M.</displayed-value>
+                <stored-value>LL. M.</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>LL. D.</displayed-value>
+                <stored-value>LL. D.</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>M.S.I.</displayed-value>
+                <stored-value>M.S.I.</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>M. Urb.</displayed-value>
+                <stored-value>M. Urb.</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>M. Mus.</displayed-value>
+                <stored-value>M. Mus.</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>D. Mus.</displayed-value>
+                <stored-value>D. Mus.</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>D. Th.</displayed-value>
+                <stored-value>D. Th.</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>L. Th.</displayed-value>
+                <stored-value>L. Th.</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>D. Psy.</displayed-value>
+                <stored-value>D. Psy.</stored-value>
+            </pair>
+        </value-pairs>
+
+        <!-- La liste des programmes pour les TME (normal qu'ils ne soient pas traduits) -->
+        <!-- TODO: vérifier si la hiérarchisation par préfixe est toujours nécessaire -->
+        <value-pairs value-pairs-name="TME-programme-valeurs" dc-term="etd.degree.discipline">
+            <pair>
+                <displayed-value>AMÉNAGEMENT</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>· Aménagement</displayed-value>
+                <stored-value>Aménagement</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Aménagement (Conservation de l'environnement bâti)</displayed-value>
+                <stored-value>Aménagement (Conservation de l'environnement bâti)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Aménagement (Montage et gestion de projets d'aménagement)</displayed-value>
+                <stored-value>Aménagement (Montage et gestion de projets d'aménagement)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Aménagement (Design et complexité)</displayed-value>
+                <stored-value>Aménagement (Design et complexité)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Architecture de paysage</displayed-value>
+                <stored-value>Architecture de paysage</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Urbanisme</displayed-value>
+                <stored-value>Urbanisme</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ARTS et SCIENCES</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>· Anthropologie</displayed-value>
+                <stored-value>Anthropologie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Chimie</displayed-value>
+                <stored-value>Chimie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Cinéma</displayed-value>
+                <stored-value>Cinéma</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Communication</displayed-value>
+                <stored-value>Communication</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Criminologie</displayed-value>
+                <stored-value>Criminologie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Démographie</displayed-value>
+                <stored-value>Démographie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Environnement et développement durable</displayed-value>
+                <stored-value>Environnement et développement durable</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Études allemandes</displayed-value>
+                <stored-value>Études allemandes</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Études anglaises</displayed-value>
+                <stored-value>Études anglaises</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Études cinématographiques</displayed-value>
+                <stored-value>Études cinématographiques</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Études classiques</displayed-value>
+                <stored-value>Études classiques</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Études hispaniques</displayed-value>
+                <stored-value>Études hispaniques</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Études internationales</displayed-value>
+                <stored-value>Études internationales</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Finance mathématique et computationnelle</displayed-value>
+                <stored-value>Finance mathématique et computationnelle</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Géographie</displayed-value>
+                <stored-value>Géographie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Histoire</displayed-value>
+                <stored-value>Histoire</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Histoire de l'art</displayed-value>
+                <stored-value>Histoire de l'art</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Informatique</displayed-value>
+                <stored-value>Informatique</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Linguistique</displayed-value>
+                <stored-value>Linguistique</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Littérature comparée</displayed-value>
+                <stored-value>Littérature comparée</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Littératures de langue française</displayed-value>
+                <stored-value>Littératures de langue française</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Littérature</displayed-value>
+                <stored-value>Littérature</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Littérature (Littérature comparée et générale)</displayed-value>
+                <stored-value>Littérature (Littérature comparée et générale)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Littérature (Théorie et épistémologie de la littérature)</displayed-value>
+                <stored-value>Littérature (Théorie et épistémologie de la littérature)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Littérature (Études littéraires et intermédiales)</displayed-value>
+                <stored-value>Littérature (Études littéraires et intermédiales)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Littérature (Littérature et cinéma)</displayed-value>
+                <stored-value>Littérature (Littérature et cinéma)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Littérature (Littérature allemande)</displayed-value>
+                <stored-value>Littérature (Littérature allemande)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Littérature (Littérature hispanique)</displayed-value>
+                <stored-value>Littérature (Littérature hispanique)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Mathématiques</displayed-value>
+                <stored-value>Mathématiques</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Philosophie</displayed-value>
+                <stored-value>Philosophie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Physique</displayed-value>
+                <stored-value>Physique</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Psychoéducation</displayed-value>
+                <stored-value>Psychoéducation</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Psychologie</displayed-value>
+                <stored-value>Psychologie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Psychologie - recherche et intervention</displayed-value>
+                <stored-value>Psychologie - recherche et intervention</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Psychologie clinique</displayed-value>
+                <stored-value>Psychologie clinique</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Relations industrielles</displayed-value>
+                <stored-value>Relations industrielles</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Science politique</displayed-value>
+                <stored-value>Science politique</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Sciences biologiques</displayed-value>
+                <stored-value>Sciences biologiques</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Sciences de la communication</displayed-value>
+                <stored-value>Sciences de la communication</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Sciences de l'information</displayed-value>
+                <stored-value>Sciences de l'information</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Sciences économiques</displayed-value>
+                <stored-value>Sciences économiques</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Sciences humaines appliquées</displayed-value>
+                <stored-value>Sciences humaines appliquées</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Service social</displayed-value>
+                <stored-value>Service social</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Sociologie</displayed-value>
+                <stored-value>Sociologie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Statistique</displayed-value>
+                <stored-value>Statistique</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Traduction</displayed-value>
+                <stored-value>Traduction</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>DROIT</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>· Droit</displayed-value>
+                <stored-value>Droit</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Droit des affaires</displayed-value>
+                <stored-value>Droit des affaires</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Droit des technologies de l'information</displayed-value>
+                <stored-value>Droit des technologies de l'information</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Droit international</displayed-value>
+                <stored-value>Droit international</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ÉDUCATION</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>· Éducation comparée et fondements de l'éducation</displayed-value>
+                <stored-value>Éducation comparée et fondements de l'éducation</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Sciences de l'éducation - Administration de l'éducation</displayed-value>
+                <stored-value>Sciences de l'éducation - Administration de l'éducation</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Sciences de l'éducation - Mesure et évaluation en éducation</displayed-value>
+                <stored-value>Sciences de l'éducation - Mesure et évaluation en éducation</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Sciences de l'éducation - Andragogie</displayed-value>
+                <stored-value>Sciences de l'éducation - Andragogie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Sciences de l'éducation - Psychopédagogie</displayed-value>
+                <stored-value>Sciences de l'éducation - Psychopédagogie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Sciences de l'éducation - Didactique</displayed-value>
+                <stored-value>Sciences de l'éducation - Didactique</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Sciences de l'éducation - Pédagogie universitaire des sciences médicales</displayed-value>
+                <stored-value>Sciences de l'éducation - Pédagogie universitaire des sciences médicales</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>MÉDECINE, SANTÉ PUBLIQUE ET KINÉSIOLOGIE</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>· Administration des services de santé</displayed-value>
+                <stored-value>Administration des services de santé</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Biochimie</displayed-value>
+                <stored-value>Biochimie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Bioéthique</displayed-value>
+                <stored-value>Bioéthique</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Bio-informatique</displayed-value>
+                <stored-value>Bio-informatique</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Biologie moléculaire</displayed-value>
+                <stored-value>Biologie moléculaire</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Épidémiologie</displayed-value>
+                <stored-value>Épidémiologie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Évaluation des technologies de la santé</displayed-value>
+                <stored-value>Évaluation des technologies de la santé</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Génie biomédical</displayed-value>
+                <stored-value>Génie biomédical</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Microbiologie et immunologie</displayed-value>
+                <stored-value>Microbiologie et immunologie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Neurosciences</displayed-value>
+                <stored-value>Neurosciences</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Nutrition</displayed-value>
+                <stored-value>Nutrition</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Pathologie et biologie cellulaires</displayed-value>
+                <stored-value>Pathologie et biologie cellulaires</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Pharmacologie</displayed-value>
+                <stored-value>Pharmacologie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Physiologie</displayed-value>
+                <stored-value>Physiologie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Santé communautaire</displayed-value>
+                <stored-value>Santé communautaire</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Santé environnementale et santé au travail</displayed-value>
+                <stored-value>Santé environnementale et santé au travail</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Santé publique</displayed-value>
+                <stored-value>Santé publique</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Sciences biomédicales</displayed-value>
+                <stored-value>Sciences biomédicales</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Sciences de l'activité physique</displayed-value>
+                <stored-value>Sciences de l'activité physique</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Sciences de l'orthophonie et de l'audiologie</displayed-value>
+                <stored-value>Sciences de l'orthophonie et de l'audiologie</stored-value>
+            </pair>         
+            <pair>
+                <displayed-value>· Sciences de la réadaptation</displayed-value>
+                <stored-value>Sciences de la réadaptation</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Sciences neurologiques</displayed-value>
+                <stored-value>Sciences neurologiques</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Virologie et immunologie</displayed-value>
+                <stored-value>Virologie et immunologie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>MÉDECINE DENTAIRE</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>· Médecine dentaire</displayed-value>
+                <stored-value>Médecine dentaire</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Sciences bucco-dentaires</displayed-value>
+                <stored-value>Sciences bucco-dentaires</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>MÉDECINE VÉTÉRINAIRE</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>· Sciences vétérinaires</displayed-value>
+                <stored-value>Sciences vétérinaires</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>MUSIQUE</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>· Musique</displayed-value>
+                <stored-value>Musique</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Musique (Composition)</displayed-value>
+                <stored-value>Musique (Composition)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>OPTOMÉTRIE</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>· Sciences de la vision</displayed-value>
+                <stored-value>Sciences de la vision</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>PHARMACIE</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>· Pharmacie</displayed-value>
+                <stored-value>Pharmacie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Pharmacothérapie avancée</displayed-value>
+                <stored-value>Pharmacothérapie avancée</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Sciences pharmaceutiques</displayed-value>
+                <stored-value>Sciences pharmaceutiques</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>SC. INFIRMIÈRES</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>· Sciences infirmières</displayed-value>
+                <stored-value>Sciences infirmières</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>THÉOLOGIE et RELIGIONS</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>· Études bibliques</displayed-value>
+                <stored-value>Études bibliques</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Sciences des religions</displayed-value>
+                <stored-value>Sciences des religions</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Théologie</displayed-value>
+                <stored-value>Théologie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Théologie (Études théologiques)</displayed-value>
+                <stored-value>Théologie (Études théologiques)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Théologie (Traduction de la Bible)</displayed-value>
+                <stored-value>Théologie (Traduction de la Bible)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Théologie pratique</displayed-value>
+                <stored-value>Théologie pratique</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Théologie - études bibliques</displayed-value>
+                <stored-value>Théologie - études bibliques</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>PROGRAMMES PLURISECTORIELS</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>· M. A. individualisée</displayed-value>
+                <stored-value>M. A. individualisée</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· M. Sc. individualisée</displayed-value>
+                <stored-value>M. Sc. individualisée</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· M. Sc. A. individualisée</displayed-value>
+                <stored-value>M. Sc. A. individualisée</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>· Ph. D. Individualisé</displayed-value>
+                <stored-value>Ph. D. Individualisé</stored-value>
+            </pair>
+        </value-pairs>
+
+        <!-- Cycle d'études -->
+        <value-pairs value-pairs-name="TME-cycle-valeurs" dc-term="etd.degree.level">
+            <pair>
+                <displayed-value>Master's</displayed-value>
+                <stored-value>Maîtrise / Master's</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Doctoral</displayed-value>
+                <stored-value>Doctorat / Doctoral</stored-value>
+            </pair>
+        </value-pairs>
+
+        <!-- Langue -->
+        <value-pairs value-pairs-name="papyrus-langue-valeurs" dc-term="dcterms.language">
+            <pair>
+                <displayed-value>English</displayed-value>
+                <stored-value>eng</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>French</displayed-value>
+                <stored-value>fra</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Spanish</displayed-value>
+                <stored-value>spa</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Italian</displayed-value>
+                <stored-value>ita</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>German</displayed-value>
+                <stored-value>deu</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Portuguese</displayed-value>
+                <stored-value>por</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Greek</displayed-value>
+                <stored-value>ell</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Latin</displayed-value>
+                <stored-value>lat</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>[N/A]</displayed-value>
+                <stored-value>zxx</stored-value>
+            </pair>
+        </value-pairs>
+
+        <value-pairs value-pairs-name="TME-sujet-UMI-valeurs" dc-term="dc.subject.other">
+            <pair>
+                <displayed-value>Select...</displayed-value>
+                <stored-value/>
+            </pair>
+	
+            <pair>
+                <displayed-value>AREA, ETHNIC, AND GENDER STUDIES :</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Southeast Asian studies (0225)</displayed-value>
+                <stored-value>Southeast Asian studies / Études du sud-est asiatique (UMI : 0225)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>African studies (0293)</displayed-value>
+                <stored-value>African studies / Études africaines (UMI : 0293)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>African American studies (0296)</displayed-value>
+                <stored-value>African American studies / Études afro-américaines (UMI : 0296)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>American studies (0323)</displayed-value>
+                <stored-value>American studies / Études américaines (UMI : 0323)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Black studies (0325)</displayed-value>
+                <stored-value>Black studies / Études des noirs (UMI : 0325)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Asian studies (0342)</displayed-value>
+                <stored-value>Asian studies / Études asiatiques (UMI : 0342)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Asian American studies (0343)</displayed-value>
+                <stored-value>Asian American studies / Études asiatico-américaines (UMI : 0343)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Baltic studies (0361)</displayed-value>
+                <stored-value>Baltic studies / Études baltiques (UMI : 0361)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Canadian studies (0385)</displayed-value>
+                <stored-value>Canadian studies / Études canadiennes (UMI : 0385)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Caribbean studies (0432)</displayed-value>
+                <stored-value>Caribbean studies / Études caribéennes (UMI : 0432)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Classical studies (0434)</displayed-value>
+                <stored-value>Classical studies / Études classiques (UMI : 0434)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>East European studies (0437)</displayed-value>
+                <stored-value>East European studies / Études d’Europe orientale (UMI : 0437)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>European studies (0440)</displayed-value>
+                <stored-value>European studies / Études européennes (UMI : 0440)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Women's studies (0453)</displayed-value>
+                <stored-value>Women's studies / Études féministes (UMI : 0453)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>French Canadian culture (0482)</displayed-value>
+                <stored-value>French Canadian culture / Études canadiennes-françaises (UMI : 0482)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>LGBTQ studies (0492)</displayed-value>
+                <stored-value>LGBTQ studies / Études relatives à la communauté LGBTQ (UMI : 0492)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Holocaust studies (0507)</displayed-value>
+                <stored-value>Holocaust studies / Études sur l’Holocauste (UMI : 0507)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Islamic studies (0512)</displayed-value>
+                <stored-value>Islamic studies / Études islamiques (UMI : 0512)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Latin American studies (0550)</displayed-value>
+                <stored-value>Latin American studies / Études latino-américaines (UMI : 0550)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Middle Eastern studies (0555)</displayed-value>
+                <stored-value>Middle Eastern studies / Études sur le Moyen-Orient (UMI : 0555)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Near Eastern studies (0559)</displayed-value>
+                <stored-value>Near Eastern studies / Études du Proche-Orient (UMI : 0559)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>North African studies (0560)</displayed-value>
+                <stored-value>North African studies / Études nord-africaines (UMI : 0560)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Pacific Rim studies (0561)</displayed-value>
+                <stored-value>Pacific Rim studies / Études du littoral du Pacifique (UMI : 0561)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Regional studies (0604)</displayed-value>
+                <stored-value>Regional studies / Études régionales (UMI : 0604)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Scandinavian studies (0613)</displayed-value>
+                <stored-value>Scandinavian studies / Études scandinaves (UMI : 0613)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Slavic studies (0614)</displayed-value>
+                <stored-value>Slavic studies / Études slaves (UMI : 0614)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Ethnic studies (0631)</displayed-value>
+                <stored-value>Ethnic studies / Études ethniques (UMI : 0631)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>South Asian studies (0638)</displayed-value>
+                <stored-value>South Asian studies / Études sud-asiatiques (UMI : 0638)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Sub Saharan Africa studies (0639)</displayed-value>
+                <stored-value>Sub Saharan Africa studies / Études africaines subsahariennes (UMI : 0639)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>South African studies (0654)</displayed-value>
+                <stored-value>South African studies / Études sud-africaines (UMI : 0654)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Gender studies (0733)</displayed-value>
+                <stored-value>Gender studies / Études sur les sexes (UMI : 0733)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Hispanic American studies (0737)</displayed-value>
+                <stored-value>Hispanic American studies / Études hispano-américaines (UMI : 0737)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Native American studies (0740)</displayed-value>
+                <stored-value>Native American studies / Études amérindiennes (UMI : 0740)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Judaic studies (0751)</displayed-value>
+                <stored-value>Judaic studies / Études judaïques (UMI : 0751)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>BUSINESS :</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Accounting (0272)</displayed-value>
+                <stored-value>Accounting / Comptabilité (UMI : 0272)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Business administration (0310)</displayed-value>
+                <stored-value>Business administration / Gestion d'entreprise (UMI : 0310)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Marketing (0338)</displayed-value>
+                <stored-value>Marketing / Commercialisation (UMI : 0338)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Arts management (0424)</displayed-value>
+                <stored-value>Arts management / Gestion artistique (UMI : 0424)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Entrepreneurship (0429)</displayed-value>
+                <stored-value>Entrepreneurship / Études en entrepreneuriat (UMI : 0429)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Sports management (0430)</displayed-value>
+                <stored-value>Sports management / Gestion sportive (UMI : 0430)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Management (0454)</displayed-value>
+                <stored-value>Management / Gestion (UMI : 0454)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Finance (0508)</displayed-value>
+                <stored-value>Finance / Financement (UMI : 0508)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Banking (0770)</displayed-value>
+                <stored-value>Banking / Études bancaires (UMI : 0770)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>COMMUNICATIONS AND INFORMATION SCIENCES :</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Journalism (0391)</displayed-value>
+                <stored-value>Journalism / Journalisme (UMI : 0391)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Library science (0399)</displayed-value>
+                <stored-value>Library science / Bibliothéconomie (UMI : 0399)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Communication (0459)</displayed-value>
+                <stored-value>Communication / Communication (UMI : 0459)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Technical communication (0643)</displayed-value>
+                <stored-value>Technical communication / Communication technique (UMI : 0643)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Web studies (0646)</displayed-value>
+                <stored-value>Web studies / Études du Web (UMI : 0646)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Mass communication (0708)</displayed-value>
+                <stored-value>Mass communication / Communication de masse (UMI : 0708)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Information science (0723)</displayed-value>
+                <stored-value>Information science / Science de l’information (UMI : 0723)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>FINE AND PERFORMING ARTS :</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Fashion (0200)</displayed-value>
+                <stored-value>Fashion / Mode (UMI : 0200)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Music history (0210)</displayed-value>
+                <stored-value>Music history / Histoire de la musique (UMI : 0210)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Musical composition (0216)</displayed-value>
+                <stored-value>Musical composition / Composition musicale (UMI : 0216)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Music theory (0223)</displayed-value>
+                <stored-value>Music theory / Théorie de la musique (UMI : 0223)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Fine arts (0357)</displayed-value>
+                <stored-value>Fine arts / Beaux-arts (UMI : 0357)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Art criticism (0365)</displayed-value>
+                <stored-value>Art criticism / Critique de l’art (UMI : 0365)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Art history (0377)</displayed-value>
+                <stored-value>Art history / Histoire de l’art (UMI : 0377)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Dance (0378)</displayed-value>
+                <stored-value>Dance / Danse (UMI : 0378)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Design (0389)</displayed-value>
+                <stored-value>Design / Conception (UMI : 0389)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Music (0413)</displayed-value>
+                <stored-value>Music / Musique (UMI : 0413)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Cinematography (0435)</displayed-value>
+                <stored-value>Cinematography / Cinématographie (UMI : 0435)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Theater (0465)</displayed-value>
+                <stored-value>Theater / Théâtre (UMI : 0465)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Performing arts (0641)</displayed-value>
+                <stored-value>Performing arts / Arts de la scène (UMI : 0641)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Theater history (0644)</displayed-value>
+                <stored-value>Theater history / Histoire du théâtre (UMI : 0644)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Film studies (0900)</displayed-value>
+                <stored-value>Film studies / Études cinématographiques (UMI : 0900)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Musical performances (0943)</displayed-value>
+                <stored-value>Musical performances / Prestations musicales (UMI : 0943)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ARCHITECTURE :</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Landscape architecture (0390)</displayed-value>
+                <stored-value>Landscape architecture / Architecture paysagère (UMI : 0390)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Architectural engineering (0462)</displayed-value>
+                <stored-value>Architectural engineering / Génie architectural (UMI : 0462)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Architecture (0729)</displayed-value>
+                <stored-value>Architecture / Architecture (UMI : 0729)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>EDUCATION :</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Art education (0273)</displayed-value>
+                <stored-value>Art education / Éducation artistique (UMI : 0273)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Community college education (0275)</displayed-value>
+                <stored-value>Community college education / Enseignement collégial (UMI : 0275)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Education finance (0277)</displayed-value>
+                <stored-value>Education finance / Finances de l’enseignement (UMI : 0277)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Home economics education (0278)</displayed-value>
+                <stored-value>Home economics education / Enseignement des sciences domestiques (UMI : 0278)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Language arts (0279)</displayed-value>
+                <stored-value>Language arts / Arts du langage (UMI : 0279)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Mathematics education (0280)</displayed-value>
+                <stored-value>Mathematics education / Enseignement des mathématiques (UMI : 0280)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Bilingual education (0282)</displayed-value>
+                <stored-value>Bilingual education / Enseignement bilingue (UMI : 0282)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Educational tests &amp; measurements (0288)</displayed-value>
+                <stored-value>Educational tests &amp; measurements / Tests de connaissances et mesure psychopédagogique (UMI : 0288)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Educational sociology (0340)</displayed-value>
+                <stored-value>Educational sociology / Sociologie pédagogique (UMI : 0340)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>English as a second language (0441)</displayed-value>
+                <stored-value>English as a second language / Anglais langue seconde (UMI : 0441)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Educational evaluation (0443)</displayed-value>
+                <stored-value>Educational evaluation / Évaluation en éducation (UMI : 0443)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Foreign language education (0444)</displayed-value>
+                <stored-value>Foreign language education / Enseignement des langues étrangères (UMI : 0444)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Gifted education (0445)</displayed-value>
+                <stored-value>Gifted education / Éducation des surdoués (UMI : 0445)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Higher education administration (0446)</displayed-value>
+                <stored-value>Higher education administration / Gestion de l’enseignement supérieur (UMI : 0446)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Instructional design (0447)</displayed-value>
+                <stored-value>Instructional design / Conception pédagogique (UMI : 0447)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Educational leadership (0449)</displayed-value>
+                <stored-value>Educational leadership / Leadership en éducation (UMI : 0449)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Middle school education (0450)</displayed-value>
+                <stored-value>Middle school education / Enseignement présecondaire (UMI : 0450)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Multicultural education (0455)</displayed-value>
+                <stored-value>Multicultural education / Enseignement multiculturel (UMI : 0455)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Pedagogy (0456)</displayed-value>
+                <stored-value>Pedagogy / Pédagogie (UMI : 0456)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Performing arts education (0457)</displayed-value>
+                <stored-value>Performing arts education / Enseignement des arts de la scène (UMI : 0457)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Education policy (0458)</displayed-value>
+                <stored-value>Education policy / Politique en matière d’éducation (UMI : 0458)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Educational administration (0514)</displayed-value>
+                <stored-value>Educational administration / Administration scolaire (UMI : 0514)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Education (0515)</displayed-value>
+                <stored-value>Education / Éducation (UMI : 0515)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Adult education (0516)</displayed-value>
+                <stored-value>Adult education / Éducation aux adultes (UMI : 0516)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Early childhood education (0518)</displayed-value>
+                <stored-value>Early childhood education / Éducation préscolaire (UMI : 0518)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>School counseling (0519)</displayed-value>
+                <stored-value>School counseling / Orientation scolaire (UMI : 0519)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Education history (0520)</displayed-value>
+                <stored-value>Education history / Histoire de l'enseignement (UMI : 0520)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Industrial arts education (0521)</displayed-value>
+                <stored-value>Industrial arts education / Cours de métiers (UMI : 0521)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Music education (0522)</displayed-value>
+                <stored-value>Music education / Enseignement de la musique (UMI : 0522)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Physical education (0523)</displayed-value>
+                <stored-value>Physical education / Éducation physique (UMI : 0523)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Elementary education (0524)</displayed-value>
+                <stored-value>Elementary education / Enseignement primaire (UMI : 0524)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Educational psychology (0525)</displayed-value>
+                <stored-value>Educational psychology / Psychologie éducationnelle (UMI : 0525)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Religious education (0527)</displayed-value>
+                <stored-value>Religious education / Éducation religieuse (UMI : 0527)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Special education (0529)</displayed-value>
+                <stored-value>Special education / Éducation spécialisée (UMI : 0529)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Teacher education (0530)</displayed-value>
+                <stored-value>Teacher education / Formation des enseignants (UMI : 0530)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Secondary education (0533)</displayed-value>
+                <stored-value>Secondary education / Enseignement secondaire (UMI : 0533)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Social sciences education (0534)</displayed-value>
+                <stored-value>Social sciences education / Enseignement des sciences sociales (UMI : 0534)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Reading instruction (0535)</displayed-value>
+                <stored-value>Reading instruction / Enseignement de la lecture (UMI : 0535)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Continuing education (0651)</displayed-value>
+                <stored-value>Continuing education / Éducation permanente (UMI : 0651)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Health education (0680)</displayed-value>
+                <stored-value>Health education / Éducation à la santé (UMI : 0680)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Business education (0688)</displayed-value>
+                <stored-value>Business education / Enseignement commercial (UMI : 0688)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Educational technology (0710)</displayed-value>
+                <stored-value>Educational technology / Technologie éducative (UMI : 0710)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Science education (0714)</displayed-value>
+                <stored-value>Science education / Enseignement des sciences (UMI : 0714)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Curriculum development (0727)</displayed-value>
+                <stored-value>Curriculum development / Élaboration de programmes (UMI : 0727)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Higher education (0745)</displayed-value>
+                <stored-value>Higher education / Enseignement supérieur (UMI : 0745)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Vocational education (0747)</displayed-value>
+                <stored-value>Vocational education / Enseignement professionnel (UMI : 0747)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Educational philosophy (0998)</displayed-value>
+                <stored-value>Educational philosophy / Philosophie pédagogique (UMI : 0998)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>HISTORY :</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Black history (0328)</displayed-value>
+                <stored-value>Black history / Histoire des Noirs (UMI : 0328)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>African history (0331)</displayed-value>
+                <stored-value>African history / Histoire de l’Afrique (UMI : 0331)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Asian history (0332)</displayed-value>
+                <stored-value>Asian history / Histoire de l’Asie (UMI : 0332)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Middle Eastern history (0333)</displayed-value>
+                <stored-value>Middle Eastern history / Histoire du Moyen-Orient (UMI : 0333)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Canadian history (0334)</displayed-value>
+                <stored-value>Canadian history / Histoire du Canada (UMI : 0334)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>European history (0335)</displayed-value>
+                <stored-value>European history / Histoire de l’Europe (UMI : 0335)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Latin American history (0336)</displayed-value>
+                <stored-value>Latin American history / Histoire de l’Amérique latine (UMI : 0336)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>American history (0337)</displayed-value>
+                <stored-value>American history / Histoire des États-Unis (UMI : 0337)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>History of Oceania (0504)</displayed-value>
+                <stored-value>History of Oceania / Histoire de l’Océanie (UMI : 0504)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>World history (0506)</displayed-value>
+                <stored-value>World history / Histoire du monde (UMI : 0506)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>History (0578)</displayed-value>
+                <stored-value>History / Histoire (UMI : 0578)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Ancient history (0579)</displayed-value>
+                <stored-value>Ancient history / Histoire de l’Antiquité (UMI : 0579)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Medieval history (0581)</displayed-value>
+                <stored-value>Medieval history / Histoire médiévale (UMI : 0581)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Modern history (0582)</displayed-value>
+                <stored-value>Modern history / Histoire moderne (UMI : 0582)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Science history (0585)</displayed-value>
+                <stored-value>Science history / Histoire de la science (UMI : 0585)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Military history (0722)</displayed-value>
+                <stored-value>Military history / Histoire militaire (UMI : 0722)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Russian history (0724)</displayed-value>
+                <stored-value>Russian history / Histoire de la Russie (UMI : 0724)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>LANGUAGE AND LITERATURE :</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Creative writing (0203)</displayed-value>
+                <stored-value>Creative writing / Création littéraire (UMI : 0203)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>French literature (0207)</displayed-value>
+                <stored-value>French literature / Littérature française (UMI : 0207)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Translation studies (0215)</displayed-value>
+                <stored-value>Translation studies / Études de traduction (UMI : 0215)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Italian studies (0222)</displayed-value>
+                <stored-value>Italian studies / Littérature italienne (UMI : 0222)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Ancient languages (0289)</displayed-value>
+                <stored-value>Ancient languages / Langues anciennes (UMI : 0289)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Linguistics (0290)</displayed-value>
+                <stored-value>Linguistics / Linguistique (UMI : 0290)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Modern language (0291)</displayed-value>
+                <stored-value>Modern language / Langues modernes (UMI : 0291)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Classical literature (0294)</displayed-value>
+                <stored-value>Classical literature / Littérature classique (UMI : 0294)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Comparative literature (0295)</displayed-value>
+                <stored-value>Comparative literature / Littérature comparée (UMI : 0295)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Medieval literature (0297)</displayed-value>
+                <stored-value>Medieval literature / Littérature médiévale (UMI : 0297)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Modern literature (0298)</displayed-value>
+                <stored-value>Modern literature / Littérature moderne (UMI : 0298)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Asian literature (0305)</displayed-value>
+                <stored-value>Asian literature / Littérature asiatique (UMI : 0305)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>German literature (0311)</displayed-value>
+                <stored-value>German literature / Littérature allemande (UMI : 0311)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Latin American literature (0312)</displayed-value>
+                <stored-value>Latin American literature / Littérature latino-américaine (UMI : 0312)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Romance literature (0313)</displayed-value>
+                <stored-value>Romance literature / Littérature romantique (UMI : 0313)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Slavic literature (0314)</displayed-value>
+                <stored-value>Slavic literature / Littérature slave (UMI : 0314)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Middle Eastern literature (0315)</displayed-value>
+                <stored-value>Middle Eastern literature / Littérature du Moyen-Orient (UMI : 0315)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>African literature (0316)</displayed-value>
+                <stored-value>African literature / Littérature africaine (UMI : 0316)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Canadian literature (0352)</displayed-value>
+                <stored-value>Canadian literature / Littérature canadienne (UMI : 0352)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>French Canadian literature (0355)</displayed-value>
+                <stored-value>French Canadian literature / Littérature canadienne-française (UMI : 0355)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Australian literature (0356)</displayed-value>
+                <stored-value>Australian literature / Littérature australienne (UMI : 0356)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Caribbean literature (0360)</displayed-value>
+                <stored-value>Caribbean literature / Littérature caribéenne (UMI : 0360)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Icelandic &amp; Scandinavian literature (0362)</displayed-value>
+                <stored-value>Icelandic &amp; Scandinavian literature / Littérature islandaise et scandinave (UMI : 0362)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Literature (0401)</displayed-value>
+                <stored-value>Literature / Littérature (UMI : 0401)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>American literature (0591)</displayed-value>
+                <stored-value>American literature / Littérature américaine (UMI : 0591)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>English literature (0593)</displayed-value>
+                <stored-value>English literature / Littérature anglaise (UMI : 0593)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Language (0679)</displayed-value>
+                <stored-value>Language / Langage (UMI : 0679)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Rhetoric (0681)</displayed-value>
+                <stored-value>Rhetoric / Rhétorique (UMI : 0681)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>PHILOSOPHY AND RELIGION :</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Religion (0318)</displayed-value>
+                <stored-value>Religion / Religion (UMI : 0318)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Clergy (0319)</displayed-value>
+                <stored-value>Clergy / Clergé (UMI : 0319)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Religious history (0320)</displayed-value>
+                <stored-value>Religious history / Histoire religieuse (UMI : 0320)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Biblical studies (0321)</displayed-value>
+                <stored-value>Biblical studies / Études bibliques (UMI : 0321)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Philosophy of religion (0322)</displayed-value>
+                <stored-value>Philosophy of religion / Philosophie de la religion (UMI : 0322)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Canon law (0375)</displayed-value>
+                <stored-value>Canon law / Loi canonique (UMI : 0375)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Divinity (0376)</displayed-value>
+                <stored-value>Divinity / Divinité (UMI : 0376)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Epistemology (0393)</displayed-value>
+                <stored-value>Epistemology / Épistémologie (UMI : 0393)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Ethics (0394)</displayed-value>
+                <stored-value>Ethics / Éthique (UMI : 0394)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Logic (0395)</displayed-value>
+                <stored-value>Logic / Logique (UMI : 0395)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Metaphysics (0396)</displayed-value>
+                <stored-value>Metaphysics / Métaphysique (UMI : 0396)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Pastoral counseling (0397)</displayed-value>
+                <stored-value>Pastoral counseling / Counselling pastoral (UMI : 0397)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Philosophy of science (0402)</displayed-value>
+                <stored-value>Philosophy of science / Philosophie de la science (UMI : 0402)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Philosophy (0422)</displayed-value>
+                <stored-value>Philosophy / Philosophie (UMI : 0422)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Theology (0469)</displayed-value>
+                <stored-value>Theology / Théologie (UMI : 0469)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Comparative religion (0618)</displayed-value>
+                <stored-value>Comparative religion / Religion comparée (UMI : 0618)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Spirituality (0647)</displayed-value>
+                <stored-value>Spirituality / Spiritualité (UMI : 0647)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Aesthetics (0650)</displayed-value>
+                <stored-value>Aesthetics / Esthétique (UMI : 0650)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>LAW AND LEGAL STUDIES :</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Law enforcement (0208)</displayed-value>
+                <stored-value>Law enforcement / Application de la loi (UMI : 0208)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Law (0398)</displayed-value>
+                <stored-value>Law / Droit (UMI : 0398)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Intellectual property (0513)</displayed-value>
+                <stored-value>Intellectual property / Propriété intellectuelle (UMI : 0513)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Patent law (0562)</displayed-value>
+                <stored-value>Patent law / Droit des brevets (UMI : 0562)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>International law (0616)</displayed-value>
+                <stored-value>International law / Droit international (UMI : 0616)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Alternative dispute resolution (0649)</displayed-value>
+                <stored-value>Alternative dispute resolution / Mode alternatif de règlements des conflits (UMI : 0649)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>SOCIAL SCIENCES :</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Archaeology (0324)</displayed-value>
+                <stored-value>Archaeology / Archéologie (UMI : 0324)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Cultural anthropology (0326)</displayed-value>
+                <stored-value>Cultural anthropology / Anthropologie culturelle (UMI : 0326)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Physical anthropology (0327)</displayed-value>
+                <stored-value>Physical anthropology / Anthropologie physique (UMI : 0327)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Forensic anthropology (0339)</displayed-value>
+                <stored-value>Forensic anthropology / Anthropologie judiciaire (UMI : 0339)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Area planning and development (0341)</displayed-value>
+                <stored-value>Area planning and development / Aménagement et développement de zone (UMI : 0341)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Social research (0344)</displayed-value>
+                <stored-value>Social research / Recherche sociale (UMI : 0344)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Folklore (0358)</displayed-value>
+                <stored-value>Folklore / Folklore (UMI : 0358)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Geography (0366)</displayed-value>
+                <stored-value>Geography / Géographie (UMI : 0366)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Social work (0452)</displayed-value>
+                <stored-value>Social work / Travail social (UMI : 0452)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Economics (0501)</displayed-value>
+                <stored-value>Economics / Économie (UMI : 0501)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Commerce-Business (0505)</displayed-value>
+                <stored-value>Commerce-Business / Commerce-Entreprise (UMI : 0505)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Economic history (0509)</displayed-value>
+                <stored-value>Economic history / Histoire économique (UMI : 0509)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Labor economics (0510)</displayed-value>
+                <stored-value>Labor economics / Économique du travail (UMI : 0510)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Economic theory (0511)</displayed-value>
+                <stored-value>Economic theory / Théorie économique (UMI : 0511)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Peace studies (0563)</displayed-value>
+                <stored-value>Peace studies / Études sur la paix (UMI : 0563)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>International relations (0601)</displayed-value>
+                <stored-value>International relations / Relations internationales (UMI : 0601)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Political Science (0615)</displayed-value>
+                <stored-value>Political Science / Sciences politiques (UMI : 0615)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Public administration (0617)</displayed-value>
+                <stored-value>Public administration / Administration publique (UMI : 0617)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Sociology (0626)</displayed-value>
+                <stored-value>Sociology / Sociologie (UMI : 0626)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Criminology (0627)</displayed-value>
+                <stored-value>Criminology / Criminologie (UMI : 0627)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Individual &amp; family studies (0628)</displayed-value>
+                <stored-value>Individual &amp; family studies / Études familiales et sur l’individu (UMI : 0628)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Labor relations (0629)</displayed-value>
+                <stored-value>Labor relations / Relations industrielles (UMI : 0629)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Public policy (0630)</displayed-value>
+                <stored-value>Public policy / Politique publique (UMI : 0630)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Organization theory (0635)</displayed-value>
+                <stored-value>Organization theory / Théorie de l’organisation (UMI : 0635)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Sociolinguistics (0636)</displayed-value>
+                <stored-value>Sociolinguistics / Sociolinguistique (UMI : 0636)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Social structure (0700)</displayed-value>
+                <stored-value>Social structure / Structure sociale (UMI : 0700)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Organizational behavior (0703)</displayed-value>
+                <stored-value>Organizational behavior / Comportement organisationnel (UMI : 0703)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Transportation (0709)</displayed-value>
+                <stored-value>Transportation / Transport (UMI : 0709)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Military studies (0750)</displayed-value>
+                <stored-value>Military studies / Études militaires (UMI : 0750)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Recreation (0814)</displayed-value>
+                <stored-value>Recreation / Récréation (UMI : 0814)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Demography (0938)</displayed-value>
+                <stored-value>Demography / Démographie (UMI : 0938)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Urban planning (0999)</displayed-value>
+                <stored-value>Urban planning / Urbanisme (UMI : 0999)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>INTERDISCIPLINARY :</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Disability studies (0205)</displayed-value>
+                <stored-value>Disability studies / Études sur les personnes handicapées (UMI : 0205)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Sexuality (0213)</displayed-value>
+                <stored-value>Sexuality / Sexualité (UMI : 0213)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Biographies (0304)</displayed-value>
+                <stored-value>Biographies / Biographies (UMI : 0304)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Food science (0359)</displayed-value>
+                <stored-value>Food science / Sciences des aliments (UMI : 0359)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Alternative energy (0363)</displayed-value>
+                <stored-value>Alternative energy / Énergies de substitution (UMI : 0363)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Home economics (0386)</displayed-value>
+                <stored-value>Home economics / Économie domestique (UMI : 0386)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Climate change (0404)</displayed-value>
+                <stored-value>Climate change / Changement climatique (UMI : 0404)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Cultural resources management (0436)</displayed-value>
+                <stored-value>Cultural resources management / Gestions des ressources culturelles (UMI : 0436)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Information technology (0489)</displayed-value>
+                <stored-value>Information technology / Technologie de l’information (UMI : 0489)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Multimedia communications (0558)</displayed-value>
+                <stored-value>Multimedia communications / Communications multimédia (UMI : 0558)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Sustainability (0640)</displayed-value>
+                <stored-value>Sustainability / Développement durable (UMI : 0640)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Museum studies (0730)</displayed-value>
+                <stored-value>Museum studies / Études muséales (UMI : 0730)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Wood sciences (0746)</displayed-value>
+                <stored-value>Wood sciences / Sciences du bois (UMI : 0746)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Energy (0791)</displayed-value>
+                <stored-value>Energy / Énergie (UMI : 0791)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Textile research (0994)</displayed-value>
+                <stored-value>Textile research / Recherche textile (UMI : 0994)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>AGRICULTURE :</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Urban forestry (0281)</displayed-value>
+                <stored-value>Urban forestry / Foresterie urbaine (UMI : 0281)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Agronomy (0285)</displayed-value>
+                <stored-value>Agronomy / Agronomie (UMI : 0285)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Wildlife management (0286)</displayed-value>
+                <stored-value>Wildlife management / Gestion de la faune (UMI : 0286)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Horticulture (0471)</displayed-value>
+                <stored-value>Horticulture / Horticulture (UMI : 0471)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Agriculture (0473)</displayed-value>
+                <stored-value>Agriculture / Agriculture (UMI : 0473)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Animal sciences (0475)</displayed-value>
+                <stored-value>Animal sciences / Sciences animales (UMI : 0475)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Animal diseases (0476)</displayed-value>
+                <stored-value>Animal diseases / Maladies animales (UMI : 0476)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Forestry (0478)</displayed-value>
+                <stored-value>Forestry / Foresterie (UMI : 0478)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Plant sciences (0479)</displayed-value>
+                <stored-value>Plant sciences / Sciences végétales (UMI : 0479)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Plant pathology (0480)</displayed-value>
+                <stored-value>Plant pathology / Pathologie végétale (UMI : 0480)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Soil sciences (0481)</displayed-value>
+                <stored-value>Soil sciences / Science des sols (UMI : 0481)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Agriculture economics (0503)</displayed-value>
+                <stored-value>Agriculture economics / Agroéconomie (UMI : 0503)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Agriculture education (0517)</displayed-value>
+                <stored-value>Agriculture education / Enseignement agricole (UMI : 0517)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Agriculture engineering (0539)</displayed-value>
+                <stored-value>Agriculture engineering / Génie agricole (UMI : 0539)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Range management (0777)</displayed-value>
+                <stored-value>Range management / Aménagement pastoral (UMI : 0777)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Aquatic sciences (0792)</displayed-value>
+                <stored-value>Aquatic sciences / Sciences aquatiques (UMI : 0792)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>BEHAVIORAL SCIENCES :</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Music therapy (0211)</displayed-value>
+                <stored-value>Music therapy / Musicothérapie (UMI : 0211)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Psychobiology (0349)</displayed-value>
+                <stored-value>Psychobiology / Psychobiologie (UMI : 0349)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Behavioral psychology (0384)</displayed-value>
+                <stored-value>Behavioral psychology / Psychologie comportementale (UMI : 0384)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Social psychology (0451)</displayed-value>
+                <stored-value>Social psychology / Psychologie sociale (UMI : 0451)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Behavioral sciences (0602)</displayed-value>
+                <stored-value>Behavioral sciences / Sciences comportementales (UMI : 0602)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Counseling psychology (0603)</displayed-value>
+                <stored-value>Counseling psychology / Psychologie de l’orientation (UMI : 0603)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Developmental psychology (0620)</displayed-value>
+                <stored-value>Developmental psychology / Psychologie du développement (UMI : 0620)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Psychology (0621)</displayed-value>
+                <stored-value>Psychology / Psychologie (UMI : 0621)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Clinical psychology (0622)</displayed-value>
+                <stored-value>Clinical psychology / Psychologie clinique (UMI : 0622)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Experimental psychology (0623)</displayed-value>
+                <stored-value>Experimental psychology / Psychologie expérimentale (UMI : 0623)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Occupational psychology (0624)</displayed-value>
+                <stored-value>Occupational psychology / Psychologie du travail (UMI : 0624)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Personality psychology (0625)</displayed-value>
+                <stored-value>Personality psychology / Psychologie de la personnalité (UMI : 0625)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Quantitative psychology (0632)</displayed-value>
+                <stored-value>Quantitative psychology / Psychologie quantitative (UMI : 0632)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Cognitive psychology (0633)</displayed-value>
+                <stored-value>Cognitive psychology / Psychologie cognitive (UMI : 0633)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Physiological psychology (0989)</displayed-value>
+                <stored-value>Physiological psychology / Psychophysiologie (UMI : 0989)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>BIOLOGICAL SCIENCES :</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Morphology (0287)</displayed-value>
+                <stored-value>Morphology / Morphologie (UMI : 0287)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Biology (0306)</displayed-value>
+                <stored-value>Biology / Biologie (UMI : 0306)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Molecular biology (0307)</displayed-value>
+                <stored-value>Molecular biology / Biologie moléculaire (UMI : 0307)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Biostatistics (0308)</displayed-value>
+                <stored-value>Biostatistics / Biostatistique (UMI : 0308)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Botany (0309)</displayed-value>
+                <stored-value>Botany / Botanique (UMI : 0309)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Neurosciences (0317)</displayed-value>
+                <stored-value>Neurosciences / Neurosciences (UMI : 0317)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Entomology (0353)</displayed-value>
+                <stored-value>Entomology / Entomologie (UMI : 0353)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Genetics (0369)</displayed-value>
+                <stored-value>Genetics / Génétique (UMI : 0369)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Cellular biology (0379)</displayed-value>
+                <stored-value>Cellular biology / Biologie cellulaire (UMI : 0379)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Endocrinology (0409)</displayed-value>
+                <stored-value>Endocrinology / Endocrinologie (UMI : 0409)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Microbiology (0410)</displayed-value>
+                <stored-value>Microbiology / Microbiologie (UMI : 0410)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Evolution &amp; development (0412)</displayed-value>
+                <stored-value>Evolution &amp; development / Evolution et développement (UMI : 0412)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Histology (0414)</displayed-value>
+                <stored-value>Histology / Histologie (UMI : 0414)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Systematic biology (0423)</displayed-value>
+                <stored-value>Systematic biology / Biologie systémique (UMI : 0423)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Zoology (0472)</displayed-value>
+                <stored-value>Zoology / Zoologie (UMI : 0472)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Biochemistry (0487)</displayed-value>
+                <stored-value>Biochemistry / Biochimie (UMI : 0487)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Biomechanics (0648)</displayed-value>
+                <stored-value>Biomechanics / Biomécanique (UMI : 0648)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Bioinformatics (0715)</displayed-value>
+                <stored-value>Bioinformatics / Bioinformatique (UMI : 0715)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Parasitology (0718)</displayed-value>
+                <stored-value>Parasitology / Parasitologie (UMI : 0718)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Physiology (0719)</displayed-value>
+                <stored-value>Physiology / Physiologie (UMI : 0719)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Virology (0720)</displayed-value>
+                <stored-value>Virology / Virologie (UMI : 0720)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Developmental biology (0758)</displayed-value>
+                <stored-value>Developmental biology / Biologie du développement (UMI : 0758)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Biophysics (0786)</displayed-value>
+                <stored-value>Biophysics / Biophysique (UMI : 0786)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Limnology (0793)</displayed-value>
+                <stored-value>Limnology / Limnologie (UMI : 0793)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ECOSYSTEM SCIENCES :</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Ecology (0329)</displayed-value>
+                <stored-value>Ecology / Écologie (UMI : 0329)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Macroecology (0420)</displayed-value>
+                <stored-value>Macroecology / Macro-écologie (UMI : 0420)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Paleoecology (0426)</displayed-value>
+                <stored-value>Paleoecology / Paléoécologie (UMI : 0426)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ENGINEERING :</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Bioengineering (0202)</displayed-value>
+                <stored-value>Bioengineering / Bioingénierie (UMI : 0202)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Hydraulic engineering (0220)</displayed-value>
+                <stored-value>Hydraulic engineering / Ingénierie hydraulique (UMI : 0220)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Geotechnology (0428)</displayed-value>
+                <stored-value>Geotechnology / Géotechnique (UMI : 0428)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Computer engineering (0464)</displayed-value>
+                <stored-value>Computer engineering / Génie informatique (UMI : 0464)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Geological engineering (0466)</displayed-value>
+                <stored-value>Geological engineering / Génie géologique (UMI : 0466)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Geophysical engineering (0467)</displayed-value>
+                <stored-value>Geophysical engineering / Génie géophysique (UMI : 0467)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Naval engineering (0468)</displayed-value>
+                <stored-value>Naval engineering / Génie naval (UMI : 0468)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Engineering (0537)</displayed-value>
+                <stored-value>Engineering / Génie (UMI : 0537)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Aerospace engineering (0538)</displayed-value>
+                <stored-value>Aerospace engineering / Génie aérospatial (UMI : 0538)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Automotive engineering (0540)</displayed-value>
+                <stored-value>Automotive engineering / Génie des véhicules automoteurs (UMI : 0540)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Biomedical engineering (0541)</displayed-value>
+                <stored-value>Biomedical engineering / Génie biomédical (UMI : 0541)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Chemical engineering (0542)</displayed-value>
+                <stored-value>Chemical engineering / Génie chimique (UMI : 0542)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Civil engineering (0543)</displayed-value>
+                <stored-value>Civil engineering / Génie civil (UMI : 0543)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Electrical engineering (0544)</displayed-value>
+                <stored-value>Electrical engineering / Génie électrique (UMI : 0544)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Industrial engineering (0546)</displayed-value>
+                <stored-value>Industrial engineering / Génie industriel (UMI : 0546)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Ocean engineering (0547)</displayed-value>
+                <stored-value>Ocean engineering / Génie océanique (UMI : 0547)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Mechanical engineering (0548)</displayed-value>
+                <stored-value>Mechanical engineering / Génie mécanique (UMI : 0548)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Packaging (0549)</displayed-value>
+                <stored-value>Packaging / Conditionnement et emballage (UMI : 0549)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Mining (0551)</displayed-value>
+                <stored-value>Mining / Exploitation (UMI : 0551)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Nuclear engineering (0552)</displayed-value>
+                <stored-value>Nuclear engineering / Génie nucléaire (UMI : 0552)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Nanotechnology (0652)</displayed-value>
+                <stored-value>Nanotechnology / Nanotechnologie (UMI : 0652)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Petroleum engineering (0765)</displayed-value>
+                <stored-value>Petroleum engineering / Génie pétrolier (UMI : 0765)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Robotics (0771)</displayed-value>
+                <stored-value>Robotics / Robotique (UMI : 0771)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>System science (0790)</displayed-value>
+                <stored-value>System science / Science des systèmes (UMI : 0790)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Plastics (0795)</displayed-value>
+                <stored-value>Plastics / Matières plastiques (UMI : 0795)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Operations research (0796)</displayed-value>
+                <stored-value>Operations research / Recherche opérationnelle (UMI : 0796)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Artificial intelligence (0800)</displayed-value>
+                <stored-value>Artificial intelligence / Intelligence artificielle (UMI : 0800)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Computer science (0984)</displayed-value>
+                <stored-value>Computer science / Informatique (UMI : 0984)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ENVIRONMENTAL SCIENCES :</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Wildlife conservation (0284)</displayed-value>
+                <stored-value>Wildlife conservation / Conservation de la faune (UMI : 0284)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Environmental philosophy (0392)</displayed-value>
+                <stored-value>Environmental philosophy / Philosophie environnementale (UMI : 0392)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Environmental geology (0407)</displayed-value>
+                <stored-value>Environmental geology / Géologie de l’environnement (UMI : 0407)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Conservation biology (0408)</displayed-value>
+                <stored-value>Conservation biology / Biologie de conservation (UMI : 0408)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Environmental economics (0438)</displayed-value>
+                <stored-value>Environmental economics / Économie de l’environnement (UMI : 0438)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Environmental law (0439)</displayed-value>
+                <stored-value>Environmental law / Droit environnemental (UMI : 0439)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Environmental education (0442)</displayed-value>
+                <stored-value>Environmental education / Formation en environnement (UMI : 0442)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Environmental health (0470)</displayed-value>
+                <stored-value>Environmental health / Santé environnementale (UMI : 0470)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Environmental management (0474)</displayed-value>
+                <stored-value>Environmental management / Gestion de l’environnement (UMI : 0474)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Environmental studies (0477)</displayed-value>
+                <stored-value>Environmental studies / Études de l’environnement (UMI : 0477)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Natural resource management (0528)</displayed-value>
+                <stored-value>Natural resource management / Gestion des ressources naturelles (UMI : 0528)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Land use planning (0536)</displayed-value>
+                <stored-value>Land use planning / Aménagement du territoire (UMI : 0536)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Water resources management (0595)</displayed-value>
+                <stored-value>Water resources management / Gestion des ressources en eau (UMI : 0595)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Environmental justice (0619)</displayed-value>
+                <stored-value>Environmental justice / Justice environnementale (UMI : 0619)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Environmental science (0768)</displayed-value>
+                <stored-value>Environmental science / Science de l’environnement (UMI : 0768)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Environmental engineering (0775)</displayed-value>
+                <stored-value>Environmental engineering / Génie environnemental (UMI : 0775)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>GEOSCIENCES :</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Aeronomy (0367)</displayed-value>
+                <stored-value>Aeronomy / Aéronomie (UMI : 0367)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Physical geography (0368)</displayed-value>
+                <stored-value>Physical geography / Géographie physique (UMI : 0368)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Geographic information science and geodesy (0370)</displayed-value>
+                <stored-value>Geographic information science and geodesy / Géomatique et géodésie (UMI : 0370)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Atmospheric chemistry (0371)</displayed-value>
+                <stored-value>Atmospheric chemistry / Chimie atmosphérique (UMI : 0371)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Geology (0372)</displayed-value>
+                <stored-value>Geology / Géologie (UMI : 0372)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Geophysics (0373)</displayed-value>
+                <stored-value>Geophysics / Géophysique (UMI : 0373)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Hydrologic sciences (0388)</displayed-value>
+                <stored-value>Hydrologic sciences / Sciences hydrologiques (UMI : 0388)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Chemical oceanography (0403)</displayed-value>
+                <stored-value>Chemical oceanography / Océanographie chimique (UMI : 0403)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Continental dynamics (0406)</displayed-value>
+                <stored-value>Continental dynamics / Dynamique continentale (UMI : 0406)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Mineralogy (0411)</displayed-value>
+                <stored-value>Mineralogy / Minéralogie (UMI : 0411)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Physical oceanography (0415)</displayed-value>
+                <stored-value>Physical oceanography / Océanographie physique (UMI : 0415)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Biological oceanography (0416)</displayed-value>
+                <stored-value>Biological oceanography / Océanographie biologique (UMI : 0416)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Paleontology (0418)</displayed-value>
+                <stored-value>Paleontology / Paléontologie (UMI : 0418)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Biogeochemistry (0425)</displayed-value>
+                <stored-value>Biogeochemistry / Biogéochimie (UMI : 0425)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Geobiology (0483)</displayed-value>
+                <stored-value>Geobiology / Géobiologie (UMI : 0483)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Geomorphology (0484)</displayed-value>
+                <stored-value>Geomorphology / Géomorphologie (UMI : 0484)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Marine geology (0556)</displayed-value>
+                <stored-value>Marine geology / Géologie marine (UMI : 0556)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Meteorology (0557)</displayed-value>
+                <stored-value>Meteorology / Météorologie (UMI : 0557)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Petroleum geology (0583)</displayed-value>
+                <stored-value>Petroleum geology / Géologie du pétrole (UMI : 0583)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Petrology (0584)</displayed-value>
+                <stored-value>Petrology / Pétrologie (UMI : 0584)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Planetology (0590)</displayed-value>
+                <stored-value>Planetology / Planétologie (UMI : 0590)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Plate tectonics (0592)</displayed-value>
+                <stored-value>Plate tectonics / Tectonique des plaques (UMI : 0592)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Sedimentary geology (0594)</displayed-value>
+                <stored-value>Sedimentary geology / Géologie sédimentaire (UMI : 0594)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Paleoclimate science (0653)</displayed-value>
+                <stored-value>Paleoclimate science / Paléoclimatologie (UMI : 0653)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Atmospheric sciences (0725)</displayed-value>
+                <stored-value>Atmospheric sciences / Sciences atmosphériques (UMI : 0725)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Remote sensing (0799)</displayed-value>
+                <stored-value>Remote sensing / Télédétection (UMI : 0799)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Geochemistry (0996)</displayed-value>
+                <stored-value>Geochemistry / Géochimie (UMI : 0996)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>HEALTH AND MEDICAL SCIENCES :</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Optometry (0212)</displayed-value>
+                <stored-value>Optometry / Optométrie (UMI : 0212)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Therapy (0214)</displayed-value>
+                <stored-value>Therapy / Thérapie (UMI : 0214)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Audiology (0300)</displayed-value>
+                <stored-value>Audiology / Audiologie (UMI : 0300)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Mental health (0347)</displayed-value>
+                <stored-value>Mental health / Santé mentale (UMI : 0347)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Gerontology (0351)</displayed-value>
+                <stored-value>Gerontology / Gérontologie (UMI : 0351)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Occupational safety (0354)</displayed-value>
+                <stored-value>Occupational safety / Sécurité de l'emploi (UMI : 0354)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Obstetrics (0380)</displayed-value>
+                <stored-value>Obstetrics / Obstétrique (UMI : 0380)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Ophthalmology (0381)</displayed-value>
+                <stored-value>Ophthalmology / Ophtalmologie (UMI : 0381)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Physical therapy (0382)</displayed-value>
+                <stored-value>Physical therapy / Physiothérapie (UMI : 0382)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Toxicology (0383)</displayed-value>
+                <stored-value>Toxicology / Toxicologie (UMI : 0383)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Pharmacology (0419)</displayed-value>
+                <stored-value>Pharmacology / Pharmacologie (UMI : 0419)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Speech therapy (0460)</displayed-value>
+                <stored-value>Speech therapy / Orthophonie (UMI : 0460)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Aging (0493)</displayed-value>
+                <stored-value>Aging / Vieillissement (UMI : 0493)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Alternative medicine (0496)</displayed-value>
+                <stored-value>Alternative medicine / Médicine alternative (UMI : 0496)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Medical ethics (0497)</displayed-value>
+                <stored-value>Medical ethics / Éthique médicale (UMI : 0497)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Occupational therapy (0498)</displayed-value>
+                <stored-value>Occupational therapy / Ergothérapie (UMI : 0498)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Osteopathic medicine (0499)</displayed-value>
+                <stored-value>Osteopathic medicine / Ostéopathie (UMI : 0499)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Public health education (0500)</displayed-value>
+                <stored-value>Public health education / Enseignement de la santé publique (UMI : 0500)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Medicine (0564)</displayed-value>
+                <stored-value>Medicine / Médecine (UMI : 0564)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Health sciences (0566)</displayed-value>
+                <stored-value>Health sciences / Sciences de la santé (UMI : 0566)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Dentistry (0567)</displayed-value>
+                <stored-value>Dentistry / Médecine dentaire (UMI : 0567)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Nursing (0569)</displayed-value>
+                <stored-value>Nursing / Sciences infirmières (UMI : 0569)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Nutrition (0570)</displayed-value>
+                <stored-value>Nutrition / Nutrition (UMI : 0570)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Pathology (0571)</displayed-value>
+                <stored-value>Pathology / Pathologie (UMI : 0571)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Pharmaceutical sciences (0572)</displayed-value>
+                <stored-value>Pharmaceutical sciences / Sciences pharmaceutiques (UMI : 0572)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Public health (0573)</displayed-value>
+                <stored-value>Public health / Santé publique (UMI : 0573)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Medical imaging (0574)</displayed-value>
+                <stored-value>Medical imaging / Imagerie médicale (UMI : 0574)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Kinesiology (0575)</displayed-value>
+                <stored-value>Kinesiology / Kinésiologie (UMI : 0575)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Surgery (0576)</displayed-value>
+                <stored-value>Surgery / Chirurgie (UMI : 0576)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Epidemiology (0766)</displayed-value>
+                <stored-value>Epidemiology / Épidémiologie (UMI : 0766)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Health care management (0769)</displayed-value>
+                <stored-value>Health care management / Gestion des soins de santé (UMI : 0769)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Veterinary medicine (0778)</displayed-value>
+                <stored-value>Veterinary medicine / Sciences vétérinaires (UMI : 0778)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Immunology (0982)</displayed-value>
+                <stored-value>Immunology / Immunologie (UMI : 0982)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Oncology (0992)</displayed-value>
+                <stored-value>Oncology / Oncologie (UMI : 0992)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>MATHEMATICAL AND PHYSICAL SCIENCES :</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Fluid mechanics (0206)</displayed-value>
+                <stored-value>Fluid mechanics / Mécanique des fluides (UMI : 0206)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Applied physics (0217)</displayed-value>
+                <stored-value>Applied physics / Physique appliquée (UMI : 0217)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Computational physics (0218)</displayed-value>
+                <stored-value>Computational physics / Physique computationnelle (UMI : 0218)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Statistical physics (0219)</displayed-value>
+                <stored-value>Statistical physics / Physique statistique (UMI : 0219)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Computational chemistry (0221)</displayed-value>
+                <stored-value>Computational chemistry / Chimie computationnelle (UMI : 0221)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Mechanics (0346)</displayed-value>
+                <stored-value>Mechanics / Mécanique (UMI : 0346)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Thermodynamics (0348)</displayed-value>
+                <stored-value>Thermodynamics / Thermodynamique (UMI : 0348)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Applied mathematics (0364)</displayed-value>
+                <stored-value>Applied mathematics / Mathématiques appliquées (UMI : 0364)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Mathematics (0405)</displayed-value>
+                <stored-value>Mathematics / Mathématiques (UMI : 0405)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Molecular chemistry (0431)</displayed-value>
+                <stored-value>Molecular chemistry / Chimie moléculaire (UMI : 0431)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Statistics (0463)</displayed-value>
+                <stored-value>Statistics / Statistiques (UMI : 0463)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Chemistry (0485)</displayed-value>
+                <stored-value>Chemistry / Chimie (UMI : 0485)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Analytical chemistry (0486)</displayed-value>
+                <stored-value>Analytical chemistry / Chimie analytique (UMI : 0486)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Inorganic chemistry (0488)</displayed-value>
+                <stored-value>Inorganic chemistry / Chimie minérale (UMI : 0488)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Organic chemistry (0490)</displayed-value>
+                <stored-value>Organic chemistry / Chimie organique (UMI : 0490)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Physical chemistry (0494)</displayed-value>
+                <stored-value>Physical chemistry / Chimie physique (UMI : 0494)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Polymer chemistry (0495)</displayed-value>
+                <stored-value>Polymer chemistry / Chimie des polymères (UMI : 0495)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Nanoscience (0565)</displayed-value>
+                <stored-value>Nanoscience / Nanoscience (UMI : 0565)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Astrophysics (0596)</displayed-value>
+                <stored-value>Astrophysics / Astrophysique (UMI : 0596)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>High temperature physics (0597)</displayed-value>
+                <stored-value>High temperature physics / Physique des hautes températures (UMI : 0597)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Low temperature physics (0598)</displayed-value>
+                <stored-value>Low temperature physics / Physique des basses températures (UMI : 0598)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Quantum physics (0599)</displayed-value>
+                <stored-value>Quantum physics / Physique quantique (UMI : 0599)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Physics (0605)</displayed-value>
+                <stored-value>Physics / Physique (UMI : 0605)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Astronomy (0606)</displayed-value>
+                <stored-value>Astronomy / Astronomie (UMI : 0606)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Electromagnetics (0607)</displayed-value>
+                <stored-value>Electromagnetics / Électromagnétique (UMI : 0607)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Molecular physics (0609)</displayed-value>
+                <stored-value>Molecular physics / Physique moléculaire (UMI : 0609)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Condensed matter physics (0611)</displayed-value>
+                <stored-value>Condensed matter physics / Physique de la matière condensée (UMI : 0611)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Theoretical mathematics (0642)</displayed-value>
+                <stored-value>Theoretical mathematics / Mathématiques théoriques (UMI : 0642)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Nuclear chemistry (0738)</displayed-value>
+                <stored-value>Nuclear chemistry / Chimie nucléaire (UMI : 0738)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Atomic physics (0748)</displayed-value>
+                <stored-value>Atomic physics / Physique atomique (UMI : 0748)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Optics (0752)</displayed-value>
+                <stored-value>Optics / Optique (UMI : 0752)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Theoretical physics (0753)</displayed-value>
+                <stored-value>Theoretical physics / Physique théorique (UMI : 0753)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Nuclear physics and radiation (0756)</displayed-value>
+                <stored-value>Nuclear physics and radiation / Physique et rayonnement nucléaires (UMI : 0756)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Plasma physics (0759)</displayed-value>
+                <stored-value>Plasma physics / Physique des plasmas (UMI : 0759)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Materials science (0794)</displayed-value>
+                <stored-value>Materials science / Science des matériaux (UMI : 0794)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>High energy physics (0798)</displayed-value>
+                <stored-value>High energy physics / Physique des particules (UMI : 0798)</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Acoustics (0986)</displayed-value>
+                <stored-value>Acoustics / Acoustique (UMI : 0986)</stored-value>
             </pair>
         </value-pairs>
 
@@ -1614,7 +4248,6 @@
         <value-pairs value-pairs-name="openaire_license_types" dc-term="license">
 
             <!-- Based on: http://openaire-guidelines-for-literature-repository-managers.readthedocs.io/en/latest/field_licensecondition.html#dc-rightslicensecondition -->
-
             <pair>
                 <displayed-value>Without License</displayed-value>
                 <stored-value></stored-value>
