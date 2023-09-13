@@ -282,6 +282,953 @@
 
         </form>
 
+        <!-- Le premier bloc de description pour les TP -->
+        <form name="papyrus-TP-form-page-01">
+
+            <!-- Le type de document, qui conditionne d'autres champs de saisie -->
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>type</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Type</label>
+                    <input-type value-pairs-name="TP-types-valeurs">dropdown</input-type>
+                    <hint>Sélectionnez le type de document que vous soumettez.</hint>
+                    <required>Entrez le type de document.</required>
+                </field>
+            </row>
+
+            <!-- L'affiliation -->
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>contributor</dc-element>
+                    <dc-qualifier>affiliation</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Affiliation du ou des auteurs</label>
+                    <input-type value-pairs-name="TP-affiliations-valeurs">dropdown</input-type>
+                    <hint>
+                            Spécifiez l'affiliation UdeM  du ou des auteurs du document faisant l'objet du dépôt.<br/>
+                            💡 <i>Astuce: Vous pouvez indiquer plusieurs affiliations en maintenant appuyées les touches «&#xA0;Ctrl&#xA0;» ou «&#xA0;⇧ Maj&#xA0;».</i>
+                    </hint>
+                    <required>Vous devez saisir l'affiliation UdeM du ou des auteur(s) du document.</required>
+                </field>
+            </row>
+
+            <!-- Note interne -->
+            <row>
+                <field>
+                    <dc-schema>UdeM</dc-schema>
+                    <dc-element>NoteInterne</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>false</repeatable>
+                    <label>Notes internes (dépôt au nom d'un auteur et/ou renseignements relatifs aux licences et droits d'auteur)</label>
+                    <input-type>textarea</input-type>
+                    <hint>
+                            <p><i>Les informations contenues dans cette note <b>ne seront pas diffusées publiquement</b></i>.</p>
+                            <ul>
+                                <li>Si vous déposez pour un tiers, veuillez indiquer pour quel auteur vous faites la démarche.</li>
+                                <li>Si vous détenez de l'information spécifique concernant les licences et/ou droits d'auteur reliés au document que vous déposez, veuillez nous en faire part, par ex.:</li>
+                                    <ul>
+                                        <li>si vous avez eu une entente particulière/autorisation écrite de l'éditeur pour diffuser le document soit parce que vous avez payé pour la diffusion en libre accès de votre article dans une revue qui n'est pas entièrement en libre accès ou encore parce que vous avez obtenu une réduction du délai de diffusion normalement exigé par la revue));</li>
+                                        <li>si votre document est assorti d'une licence <a href="https://bib.umontreal.ca/gerer-diffuser/droit-auteur/guide-droit-auteur?tab=5240240">Creative Commons</a> ou de toute autre licence ouverte.</li>
+                                    </ul>
+                                <li>S'il existe une autre version linguistique équivalente (traduction) de votre document que vous souhaitez référer, entrez ici son identifiant (URL ou DOI).</li>
+                                <li>Veuillez nous faire part de toute autre renseignement pertinent ou demande.</li>
+                            </ul>
+                    </hint>
+                    <required/>
+                </field>
+            </row>
+
+        </form>
+
+        <!-- Le deuxième bloc de description pour les TP -->
+        <form name="papyrus-TP-form-page-02">
+
+            <!-- Version -->
+            <row>
+                <field>
+                    <dc-schema>UdeM</dc-schema>
+                    <dc-element>VersionRioxx</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>false</repeatable>
+                    <label>Version</label>
+                    <type-bind>Article</type-bind>
+                    <input-type value-pairs-name="TP-versions-valeurs">dropdown</input-type>
+                    <hint>Indiquez la version de l'article que vous vous apprêtez à déposer.</hint>
+                    <required>Vous devez préciser la version de l'article que vous vous apprêtez à déposer.</required>
+                </field>
+            </row>
+
+            <!-- Référence fournie par le déposant (remplace le titre) -->
+            <row>
+                <field>
+                    <dc-schema>UdeM</dc-schema>
+                    <dc-element>ReferenceFournieParDeposant</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>false</repeatable>
+                    <label>Référence au document</label>
+                    <type-bind>Livre / Book</type-bind>
+                    <input-type>textarea</input-type>
+                    <hint>
+                            Entrez la référence au document. Ces informations seront validées et reprises par nos équipes.<br/>
+                            S'il s'agit d'une version publiée, un identifiant unique tel l'<strong>ISBN</strong> ou le <strong>DOI</strong> suffit.
+                            Pour toute autre version, entrez le titre du livre et la date de cette version. 
+                    </hint>
+                    <required>Vous devez inscrire la référence du document.</required>
+                </field>
+            </row>
+            <!-- TODO: la seule différence est le hint, et encore... on garde cette approche? -->
+            <row>
+                <field>
+                    <dc-schema>UdeM</dc-schema>
+                    <dc-element>ReferenceFournieParDeposant</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>false</repeatable>
+                    <label>Référence au document</label>
+                    <type-bind>Actes de congrès / Conference proceedings,Revue / Journal,Rapport / Report</type-bind>
+                    <input-type>textarea</input-type>
+                    <hint>
+                            Entrez la référence au document. Ces informations seront validées et reprises par nos équipes.<br/>
+                            S'il s'agit d'une version publiée, un identifiant unique tel l'<strong>ISBN</strong>, l'<strong>ISSN</strong> ou le <strong>DOI</strong> suffit.
+                            Pour toute autre version, entrez le titre du document et la date de cette version. 
+                    </hint>
+                    <required>Vous devez inscrire la référence du document.</required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>UdeM</dc-schema>
+                    <dc-element>ReferenceFournieParDeposant</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>false</repeatable>
+                    <label>Référence au document</label>
+                    <type-bind>Article</type-bind>
+                    <input-type>textarea</input-type>
+                    <hint>
+                            Entrez la référence de l'article. Ces informations seront validées et reprises par nos équipes.<br/>
+                            S'il s'agit d'une <u>version acceptée ou déjà publiée</u>, un identifiant unique tel le <strong>DOI</strong> ou l'identifiant <strong>PubMed</strong> suffit.
+                            Pour toute autre version, entrez le titre de la revue (si connu), la pagination (si applicable), et la date de cette version.
+                    </hint>
+                    <required>Vous devez inscrire la référence de l'article.</required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>UdeM</dc-schema>
+                    <dc-element>ReferenceFournieParDeposant</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>false</repeatable>
+                    <label>Référence au document</label>
+                    <type-bind>Chapitre de livre / Book chapter</type-bind>
+                    <input-type>textarea</input-type>
+                    <hint>
+                            Entrez la référence au document. Ces informations seront validées et reprises par nos équipes.<br/>
+                            S'il s'agit d'une version publiée, un identifiant unique tel l'<strong>ISBN</strong> du livre et la pagination du chapitre suffisent.<br/>
+                            Pour toute autre version, entrez le titre du livre, l'édition (si applicable), la pagination du chapitre (si connue), et indiquez la date de cette version.
+                    </hint>
+                    <required>Vous devez inscrire la référence du chapitre de livre.</required>
+                </field>
+            </row>
+
+            <!-- Le titre, seulement en mode workflow (TODO: à tester)-->
+            <!-- TODO: seuls les hint diffèrent, et en plus c'est destiné à la TDM... -->
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>title</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>false</repeatable>
+                    <label>Titre</label>
+                    <type-bind>Livre / Book,Rapport / Report,Article,Chapitre de livre / Book chapter</type-bind>
+                    <input-type>textarea</input-type>
+                    <hint>
+                        <span style="padding:2px;border:1px solid lightcoral;border-image:none;background-color:seashell;">DONNÉE <span style="color:red;"> OBLIGATOIRE </span> SPÉCIFIÉE À l'INTERNE (équipe DTDM)</span><br/>
+                        Entrez le titre du document.	Veillez à séparer le titre du sous-titre par le deux-points le cas échéant. Consultez au besoin le Guide de saisie.<br/>
+                    </hint>
+                    <required/>
+                    <visibility>workflow</visibility>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>title</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>false</repeatable>
+                    <label>Titre</label>
+                    <type-bind>Actes de congrès / Conference proceedings</type-bind>
+                    <input-type>textarea</input-type>
+                    <hint>
+                            <span style="padding:2px;border:1px solid lightcoral;border-image:none;background-color:seashell;">DONNÉE <span style="color:red;"> OBLIGATOIRE </span> SPÉCIFIÉE À l'INTERNE (équipe DTDM)</span><br/>
+                            Entrez le titre des Actes (incluant lieu et date du congrès).<br/> 
+                            Ex. (1) <i>Actes du XXVIIe Congrès international de linguistique et de philologie romanes, Nancy, France, 15-20 juillet 2013</i><br/>
+                            (2) <i>Proceedings of the 1st International Congress on Signal and Information Processing, Networking and Computers (ICSINC 2015), Beijing, China, October 17-18, 2015</i>
+                    </hint>
+                    <required/>
+                    <visibility>workflow</visibility>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>title</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>false</repeatable>
+                    <label>Titre</label>
+                    <type-bind>Revue / Journal</type-bind>
+                    <input-type>textarea</input-type>
+                    <hint>
+                            <span style="padding:2px;border:1px solid lightcoral;border-image:none;background-color:seashell;">DONNÉE <span style="color:red;"> OBLIGATOIRE </span> SPÉCIFIÉE À l'INTERNE (équipe DTDM)</span><br/>
+                            Complétez la transcription du titre de la revue en respectant la ponctuation ISBD (Schéma de l'ISBD et ponctuation).<br/> 
+                            Ex. (1) <i>Le pied : revue littéraire ; automne 2011</i><br/>
+                            (2) <i>[<span style="background-color:yellow">2e ex. à venir</span>]</i>
+                    </hint>
+                    <required/>
+                    <visibility>workflow</visibility>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>title</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>false</repeatable>
+                    <label>Titre</label>
+                    <type-bind>Enregistrement musical / Musical recording,Partition / Musical notation,Film ou vidéo / Motion picture or video,Ensemble de données / Dataset,Logiciel / Software,Carte géographique / Map,Présentation hors congrès / Non-conference presentation,Contribution à un congrès / Conference object,Matériel didactique / Educational material,Autre / Other</type-bind>
+                    <input-type>textarea</input-type>
+                    <hint>
+                            Entrez le titre du document suivant le format <span style="margin-right:0.3em;margin-left:0.3em;font-family:monospace;border:1pt darkkhaki solid;"><i><strong>Titre : sous-titre</strong></i></span>.<br />
+                            Nous vous recommandons de saisir des caractères Unicode pour les symboles et caractères non-latins dans les champs titre/résumés/mots-clés.<br />
+                            Ex.: (1) <i>Robust H∞ stabilization of stochastic hybrid systems with wiener process</i><br />
+                            (2) <i>Diffusions élastiques α-α et α-Li⁶ par la méthode de la coordonnée génératrice</i><br />
+                            <br />Si vous préférez, vous pouvez également saisir du code LaTeX, notamment pour les formules mathématiques plus complexes ou qui ne pourraient être rendues avec les moyens mentionnés plus haut. Le code LaTeX est interprété entre les balises <code>\<span>(...\</span>)</code> sur une ligne et <code>$<span>$...$</span>$</code> pour un rendu en bloc.<br />
+                            Ex.: (1) <code>\<span>(f(n) \notin \Theta(g(n))\</span>)</code> se transforme en \(f(n) \notin \Theta(g(n))\) sur la même ligne.<br />
+                            (2) <code>$<span>$f(n) \notin \Theta(g(n))$</span>$</code> affichera la même formule mais dans un bloc détaché du paragraphe.
+                    </hint>
+                    <!-- TODO: en v5.8, il est visible et requis, est-ce correct? -->
+                    <required>Vous devez inscrire un titre principal pour le document soumis.</required>
+                </field>
+            </row>
+
+            <!-- Autres titres -->
+            <!-- Vérifier si c'est nécessaire de faire les type-bind pour le hint... -->
+            <row>
+                <field>
+                    <dc-schema>dcterms</dc-schema>
+                    <dc-element>alternative</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>true</repeatable>
+                    <label>Autre(s) titre(s)</label>
+                    <type-bind>Actes de congrès / Conference proceedings,Revue / Journal,Livre / Book,Rapport / Report,Article,Chapitre de livre / Book chapter</type-bind>
+                    <input-type>textarea</input-type>
+                    <hint>
+                            <span style="padding:2px;border:1px solid lightcoral;border-image:none;background-color:seashell;;">DONNÉE SPÉCIFIÉE À l'INTERNE (équipe DTDM)</span><br/>
+                            Si le document possède des titres associés (parallèles, traduits, abrégés), veuillez les inscrire ici. <br/>
+                            Consultez au besoin le Guide de saisie.
+                    </hint>
+                    <required/>
+                    <visibility>workflow</visibility>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dcterms</dc-schema>
+                    <dc-element>alternative</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>true</repeatable>
+                    <label>Autre(s) titre(s)</label>
+                    <type-bind>Enregistrement musical / Musical recording,Partition / Musical notation,Film ou vidéo / Motion picture or video,Ensemble de données / Dataset,Logiciel / Software,Carte géographique / Map,Présentation hors congrès / Non-conference presentation,Contribution à un congrès / Conference object,Matériel didactique / Educational material,Autre / Other</type-bind>
+                    <input-type>textarea</input-type>
+                    <hint>
+                            Si le document possède des titres associés (parallèles, traduits, abrégés) veuillez les inscrire ici.
+                    </hint>
+                    <!-- TODO: en v5.8, il est visible... normal? -->
+                    <required/>
+                </field>
+            </row>
+
+            <!-- ISSN -->
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>identifier</dc-element>
+                    <dc-qualifier>issn</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>ISSN</label>
+                    <type-bind>Revue / Journal,Rapport / Report</type-bind>
+                    <input-type>onebox</input-type>
+                    <hint>Entrez, si applicable, le(s) ISSN du document soumis.</hint>
+                    <required/>
+                    <visibility>workflow</visibility>
+                </field>
+            </row>
+
+            <!-- DOI, URL, ISBN -->
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>identifier</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>true</repeatable>
+                    <label>Identifiant(s)</label>
+                    <type-bind>Actes de congrès / Conference proceedings,Revue / Journal,Livre / Book,Rapport / Report;</type-bind>
+                    <input-type value-pairs-name="TP-identifiants-valeurs-tous">qualdrop_value</input-type>
+                    <hint>
+                            <span style="padding:2px;border:1px solid lightcoral;border-image:none;background-color:seashell;">DONNÉE SPÉCIFIÉE À l'INTERNE (équipe DTDM)</span><br/>
+                            Si le document possède des identifiants normalisés (ISBN, ISSN, URL, DOI, Handle) veuillez les inscrire ici en sélectionnant le type d'identifiant qui s'applique.
+                    </hint>
+                    <required/>
+                    <visibility>workflow</visibility>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>identifier</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>true</repeatable>
+                    <label>Identifiant(s)</label>
+                    <type-bind>Article,Chapitre de livre / Book chapter</type-bind>
+                    <input-type value-pairs-name="TP-identifiants-valeurs-restreint">qualdrop_value</input-type>
+                    <hint>
+                            <span style="padding:2px;border:1px solid lightcoral;border-image:none;background-color:seashell;">DONNÉE SPÉCIFIÉE À l'INTERNE (équipe DTDM)</span><br/>
+                            Si le document possède des identifiants normalisés (URL, DOI, autre) veuillez les inscrire ici en sélectionnant le type d'identifiant qui s'applique.
+                    </hint>
+                    <required/>
+                    <visibility>workflow</visibility>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>identifier</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>true</repeatable>
+                    <label>Identifiant(s)</label>
+                    <type-bind>Enregistrement musical / Musical recording,Partition / Musical notation,Film ou vidéo / Motion picture or video,Ensemble de données / Dataset,Logiciel / Software,Carte géographique / Map,Présentation hors congrès / Non-conference presentation,Matériel didactique / Educational material,Autre / Other</type-bind>
+                    <input-type value-pairs-name="TP-identifiants-valeurs-tous">qualdrop_value</input-type>
+                    <hint>
+                            Si votre document possède des identifiants normalisés (ISBN, ISSN, URL, DOI, Handle), veuillez les inscrire ici en sélectionnant le type d'identifiant qui s'applique.<br/>
+                            Rappel :
+                            <i>URL/URI = «&#xA0;Uniform Resource Locator/Identifier&#xA0;», i.e. une adresse internet (ex. «&#xA0;http://www.moncentrederecherche.ca/documents/mondoc.pdf&#xA0;»</i>);<br/>
+                            <i>DOI = «&#xA0;Digital Object Identifier&#xA0;», littéralement «&#xA0;identifiant d'objet numérique&#xA0;» (ex. 10.1037/a0013790)</i>
+                    </hint>
+                    <!-- TODO: en v5.8, il est visible... normal? -->
+                    <required/>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>identifier</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>true</repeatable>
+                    <label>Identifiant(s)</label>
+                    <type-bind>Contribution à un congrès / Conference object</type-bind>
+                    <input-type value-pairs-name="TP-identifiants-valeurs-restreint">qualdrop_value</input-type>
+                    <hint>
+                            Si le document possède des identifiants normalisés (URL, DOI, autre) veuillez les inscrire ici en sélectionnant le type d'identifiant qui s'applique.
+                    </hint>
+                    <!-- TODO: en v5.8, il est visible... normal? -->
+                    <required/>
+                </field>
+            </row>
+
+            <!-- Auteur -->
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>contributor</dc-element>
+                    <dc-qualifier>author</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Auteur(s)</label>
+                    <type-bind>Actes de congrès / Conference proceedings,Livre / Book,Rapport / Report,Article,Chapitre de livre / Book chapter</type-bind>
+                    <input-type>name</input-type>
+                    <hint>
+                            <span style="padding:2px;border:1px solid lightcoral;border-image:none;background-color:seashell;">DONNÉE SPÉCIFIÉE À l'INTERNE (équipe DTDM)</span><br/>
+                            Utilisez le bouton «&#xA0;Ajouter&#xA0;» pour saisir les coauteurs.
+                    </hint>
+                    <required/>
+                    <visibility>workflow</visibility>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>contributor</dc-element>
+                    <dc-qualifier>author</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Auteur(s)</label>
+                    <type-bind>Enregistrement musical / Musical recording,Partition / Musical notation,Film ou vidéo / Motion picture or video,Ensemble de données / Dataset,Logiciel / Software,Carte géographique / Map,Présentation hors congrès / Non-conference presentation,Contribution à un congrès / Conference object,Matériel didactique / Educational material,Autre / Other</type-bind>
+                    <input-type>name</input-type>
+                    <hint>
+                            Entrez, le nom et le prénom complet de l'auteur du document.<br/>
+                            Utilisez le bouton «&#xA0;Ajouter&#xA0;» pour saisir les coauteurs.
+                    </hint>
+                    <required/>
+                </field>
+            </row>
+
+            <!-- Contributeur -->
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>contributor</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>true</repeatable>
+                    <label>Contributeur(s)</label>
+                    <type-bind>Revue / Journal,Livre / Book,Chapitre de livre / Book chapter,Actes de congrès / Conference proceedings,Rapport / Report</type-bind>
+                    <input-type>name</input-type>
+                    <hint>
+                            <span style="padding:2px;border:1px solid lightcoral;border-image:none;background-color:seashell;">DONNÉE SPÉCIFIÉE À l'INTERNE (équipe DTDM)</span><br/>
+                            Entrez, le nom et le prénom complet de la personne ou le nom de l'organisme ayant apporté une contribution (édition intellectuelle, direction de publication, etc.) au document.<br/>
+                            Utilisez le bouton «&#xA0;Ajouter&#xA0;» pour ajouter des contributeurs.
+                    </hint>
+                    <required/>
+                    <visibility>workflow</visibility>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>contributor</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>true</repeatable>
+                    <label>Contributeur(s)</label>
+                    <type-bind>Contribution à un congrès / Conference object,Autre / Other</type-bind>
+                    <input-type>name</input-type>
+                    <hint>
+                            Entrez, si applicable, le nom et le prénom complet de la personne ou le nom de l'organisme ayant apporté une contribution (édition intellectuelle, direction de publication, etc.) au document.<br/>
+                            Utilisez le bouton «&#xA0;Ajouter&#xA0;» pour ajouter des contributeurs.
+                    </hint>
+                    <required/>
+                </field>
+            </row>
+
+            <!-- Éditeur -->
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>publisher</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>true</repeatable>
+                    <label>Éditeur</label>
+                    <type-bind>Actes de congrès / Conference proceedings,Revue / Journal,Livre / Book,Rapport / Report,Article,Chapitre de livre / Book chapter</type-bind>
+                    <input-type>onebox</input-type>
+                    <hint>
+                            <span style="padding:2px;border:1px solid lightcoral;border-image:none;background-color:seashell;">DONNÉE SPÉCIFIÉE À l'INTERNE (équipe DTDM)</span><br/>
+                            Entrez, si applicable, le nom de l'éditeur (par ex. éd. commercial) du document.
+                    </hint>
+                    <required/>
+                    <visibility>workflow</visibility>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>publisher</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>true</repeatable>
+                    <label>Éditeur</label>
+                    <type-bind>Enregistrement musical / Musical recording,Partition / Musical notation,Film ou vidéo / Motion picture or video,Carte géographique / Map,Contribution à un congrès / Conference object,Matériel didactique / Educational material</type-bind>
+                    <input-type>onebox</input-type>
+                    <hint>
+                            Entrez, si applicable, le nom de l'éditeur (par ex. éd. commercial) du document.
+                    </hint>
+                    <required/>
+                </field>
+            </row>
+
+            <!-- Date -->
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>date</dc-element>
+                    <dc-qualifier>issued</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Date du document</label>
+                    <type-bind>Actes de congrès / Conference proceedings,Revue / Journal,Livre / Book,Rapport / Report,Chapitre de livre / Book chapter,Article</type-bind>
+                    <input-type>date</input-type>
+                    <hint>
+                            <span style="padding:2px;border:1px solid lightcoral;border-image:none;background-color:seashell;">DONNÉE <span style="color:red;"> OBLIGATOIRE </span> SPÉCIFIÉE À l'INTERNE (équipe DTDM)</span><br/>
+                            Indiquez la date du document. Le jour (voire le mois) peut être laissé vide si inconnu.
+                    </hint>
+                    <required/>
+                    <visibility>workflow</visibility>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>date</dc-element>
+                    <dc-qualifier>issued</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Date du document</label>
+                    <type-bind>Enregistrement musical / Musical recording,Partition / Musical notation,Film ou vidéo / Motion picture or video,Ensemble de données / Dataset,Logiciel / Software,Carte géographique / Map,Présentation hors congrès / Non-conference presentation,Contribution à un congrès / Conference object,Matériel didactique / Educational material,Autre / Other</type-bind>
+                    <input-type>date</input-type>
+                    <hint>
+                            Indiquez la date du document. Dans le cas d'un document publié, entrez la date de publication.
+                            Le jour (voire le mois) n'est pas obligatoire.
+                    </hint>
+                    <required>Entrez la date du document.</required>
+                </field>
+            </row>
+
+            <!-- Embargo -->
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>date</dc-element>
+                    <dc-qualifier>available</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Embargo</label>
+                    <input-type value-pairs-name="TP-embargo-valeurs">date</input-type>
+                    <hint>
+                            <span style="padding:2px;border:1px solid lightcoral;border-image:none;background-color:seashell;">DONNÉE SPÉCIFIÉE À l'INTERNE (équipe DTDM)</span><br/>
+                            Période d'embargo calculée à partir de la date du document entrée ci-haut.
+                    </hint>
+                    <required/>
+                    <visibility>workflow</visibility>
+                </field>
+            </row>
+
+            <!-- Référence bibliographique -->
+            <row>
+                <field>
+                    <dc-schema>oaire</dc-schema>
+                    <dc-element>citationTitle</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>false</repeatable>
+                    <label>Titre du document parent (périodique ou livre)</label>
+                    <type-bind>Article,Chapitre de livre / Book chapter</type-bind>
+                    <input-type>onebox</input-type>
+                    <hint>
+                            <span style="padding:2px;border:1px solid lightcoral;border-image:none;background-color:seashell;">DONNÉE SPÉCIFIÉE À l'INTERNE (équipe DTDM)</span><br/>
+                            (1) Article : Titre du périodique (ex. «&#xA0;Sociologie et sociétés&#xA0;»).
+                            (2) Chapitre de livre : Titre du livre (ex.: «&#xA0;The Routledge research companion to early drama and performance&#xA0;»)
+                    </hint>
+                    <required/>
+                    <visibility>workflow</visibility>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>oaire</dc-schema>
+                    <dc-element>citationVolume</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>false</repeatable>
+                    <label>Volume du périodique (ou du livre)</label>
+                    <type-bind>Article,Chapitre de livre / Book chapter</type-bind>
+                    <input-type>onebox</input-type>
+                    <hint>
+                            <span style="padding:2px;border:1px solid lightcoral;border-image:none;background-color:seashell;">DONNÉE SPÉCIFIÉE À l'INTERNE (équipe DTDM)</span><br/>
+                            Entrez le volume (ex. «&#xA0;6&#xA0;»).
+                    </hint>
+                    <required/>
+                    <visibility>workflow</visibility>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>oaire</dc-schema>
+                    <dc-element>citationIssue</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>false</repeatable>
+                    <label>Numéro du périodique</label>
+                    <type-bind>Article</type-bind>
+                    <input-type>onebox</input-type>
+                    <hint>
+                            <span style="padding:2px;border:1px solid lightcoral;border-image:none;background-color:seashell;">DONNÉE SPÉCIFIÉE À l'INTERNE (équipe DTDM)</span><br/>
+                            Entrez le numéro (ex. «&#xA0;2&#xA0;»).
+                    </hint>
+                    <required/>
+                    <visibility>workflow</visibility>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>oaire</dc-schema>
+                    <dc-element>citationEdition</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>false</repeatable>
+                    <label>Mention d'édition du document parent (livre)</label>
+                    <type-bind>Chapitre de livre / Book chapter</type-bind>
+                    <input-type>onebox</input-type>
+                    <hint>
+                            <span style="padding:2px;border:1px solid lightcoral;border-image:none;background-color:seashell;">DONNÉE SPÉCIFIÉE À l'INTERNE (équipe DTDM)</span><br/>
+                            Entrez la mention d'édition du document parent (livre) (ex. «&#xA0;2&#xA0;»).
+                    </hint>
+                    <required/>
+                    <visibility>workflow</visibility>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>oaire</dc-schema>
+                    <dc-element>citationStartPage</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>false</repeatable>
+                    <label>Page de début</label>
+                    <type-bind>Article,Chapitre de livre / Book chapter</type-bind>
+                    <input-type>onebox</input-type>
+                    <hint>
+                            <span style="padding:2px;border:1px solid lightcoral;border-image:none;background-color:seashell;">DONNÉE SPÉCIFIÉE À l'INTERNE (équipe DTDM)</span><br/>
+                            Entrez la page du début (ex. «&#xA0;29&#xA0;»).
+                    </hint>
+                    <required/>
+                    <visibility>workflow</visibility>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>oaire</dc-schema>
+                    <dc-element>citationEndPage</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>false</repeatable>
+                    <label>Page de fin</label>
+                    <type-bind>Article,Chapitre de livre / Book chapter</type-bind>
+                    <input-type>onebox</input-type>
+                    <hint>
+                            <span style="padding:2px;border:1px solid lightcoral;border-image:none;background-color:seashell;">DONNÉE SPÉCIFIÉE À l'INTERNE (équipe DTDM)</span><br/>
+                            Entrez la page de fin (ex. «&#xA0;37&#xA0;»).
+                    </hint>
+                    <required/>
+                    <visibility>workflow</visibility>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>oaire</dc-schema>
+                    <dc-element>citationTitle</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>false</repeatable>
+                    <label>Titre du congrès</label>
+                    <type-bind>Contribution à un congrès / Conference object</type-bind>
+                    <input-type>onebox</input-type>
+                    <hint>
+                            Pour une contribution publiée, entrez le titre des actes du congrès.<br/>
+                            Ex. (1) <i>Actes du XXVIIe Congrès international de linguistique et de philologie romanes</i><br/>
+                            (2) <i>Proceedings of the 1st International Congress on Signal and Information Processing, Networking and Computers(ICSINC 2015).</i>
+                            <br/>Pour un autre type de contribution afférente (affiche, enregistrement vidéo, etc.), entrez le nom du congrès.<br/>
+                            Ex. (1) <i>38e Congrès de la Société de criminologie du Québec</i><br/>
+                            (2) <i>2019 Annual meeting of the AAO</i>
+                    </hint>
+                    <required/>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>oaire</dc-schema>
+                    <dc-element>citationIssue</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>false</repeatable>
+                    <label>Numéro des actes</label>
+                    <type-bind>Contribution à un congrès / Conference object</type-bind>
+                    <input-type>onebox</input-type>
+                    <hint>
+                            Entrez le numéro des actes (ex. «&#xA0;2&#xA0;»).
+                    </hint>
+                    <required/>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>oaire</dc-schema>
+                    <dc-element>citationConferencePlace</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>false</repeatable>
+                    <label>Lieu du congrès</label>
+                    <type-bind>Contribution à un congrès / Conference object</type-bind>
+                    <input-type>onebox</input-type>
+                    <hint>
+                            Entrez le lieu du congrès.<br/>
+                            Ex. (1) <i>Nancy (France)</i><br/>
+                            (2) <i>Montréal (Québec)</i>
+                    </hint>
+                    <required/>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>oaire</dc-schema>
+                    <dc-element>citationConferenceDate</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>false</repeatable>
+                    <label>Dates du congrès</label>
+                    <type-bind>Contribution à un congrès / Conference object</type-bind>
+                    <input-type>onebox</input-type>
+                    <hint>
+                            Entrez les dates du congrès (en suivant le format AAAA-MM-JJ).<br/>
+                            Ex. (1) <i>2019-05-02</i><br/>
+                            (2) <i>2013-09-22 - 2013-09-26</i>
+                    </hint>
+                    <required/>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>oaire</dc-schema>
+                    <dc-element>citationStartPage</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>false</repeatable>
+                    <label>Page de début</label>
+                    <type-bind>Contribution à un congrès / Conference object</type-bind>
+                    <input-type>onebox</input-type>
+                    <hint>
+                            Entrez la page du début s'il s'agit d'une contribution publiée (ex. «&#xA0;29&#xA0;»).
+                    </hint>
+                    <required/>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>oaire</dc-schema>
+                    <dc-element>citationEndPage</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>false</repeatable>
+                    <label>Page de fin</label>
+                    <type-bind>Contribution à un congrès / Conference object</type-bind>
+                    <input-type>onebox</input-type>
+                    <hint>
+                            Entrez la page de fin s'il s'agit d'une contribution publiée (ex. «&#xA0;37&#xA0;»).
+                    </hint>
+                    <required/>
+                </field>
+            </row>
+
+            <!-- Fait partie de -->
+            <row>
+                <field>
+                    <dc-schema>dcterms</dc-schema>
+                    <dc-element>isPartOf</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>true</repeatable>
+                    <label>Identifiant(s) du document parent</label>
+                    <type-bind>Article,Chapitre de livre / Book chapter</type-bind>
+                    <input-type>onebox</input-type>
+                    <hint>
+                            <span style="padding:2px;border:1px solid lightcoral;border-image:none;background-color:seashell;">DONNÉE SPÉCIFIÉE À l'INTERNE (équipe DTDM)</span><br/>
+                            Entrez, si applicable, l'ISBN (Chapitre de livre) ou l'ISSN (Article), ou encore, si applicable, l'identifiant DOI ou Handle du <b>document parent</b> duquel fait partie votre document.<br/>
+                            Les ISSN et ISBN doivent être inscrits en spécifiant l'espace de nommage et la syntaxe URN (Uniform Resource Names). Pour les DOI, mettre le préfixe "doi:". Pour les handle, les exprimer en URL (http ou https).<br/>
+                            Ex.: (1) <i>urn:ISSN:0259-000X</i><br/>
+                            (2) <i>urn:ISBN:0451450523</i><br/>
+                            (3) <i>doi:20.1000/100</i><br/>
+                            (4) <i>http://hdl.handle.net/1866/20642</i>
+                    </hint>
+                    <required/>
+                    <visibility>workflow</visibility>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dcterms</dc-schema>
+                    <dc-element>isPartOf</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>true</repeatable>
+                    <label>Identifiant(s) du document parent</label>
+                    <type-bind>Enregistrement musical / Musical recording,Partition / Musical notation,Film ou vidéo / Motion picture or video,Ensemble de données / Dataset,Logiciel / Software,Carte géographique / Map,Présentation hors congrès / Non-conference presentation,Contribution à un congrès / Conference object,Matériel didactique / Educational material,Autre / Other</type-bind>
+                    <input-type>onebox</input-type>
+                    <hint>
+                            Entrez, si applicable, l'identifiant (ISBN, ISSN, DOI, Handle, etc.) du <b>document parent</b> duquel fait partie votre document.<br/>
+                            Ex.: (1) <i>urn:ISSN:0259-000X</i><br/>
+                            (2) <i>urn:ISBN:0451450523</i><br/>
+                            (3) <i>doi:20.1000/100</i><br/>
+                            (4) <i>http://hdl.handle.net/1866/20642</i>
+                    </hint>
+                    <required/>
+                </field>
+            </row>
+
+            <!-- Langue -->
+            <row>
+                <field>
+                    <dc-schema>dcterms</dc-schema>
+                    <dc-element>language</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>true</repeatable>
+                    <label>Langue(s)</label>
+                    <type-bind>Actes de congrès / Conference proceedings,Revue / Journal,Livre / Book,Rapport / Report,Article,Chapitre de livre / Book chapter</type-bind>
+                    <input-type value-pairs-name="papyrus-langue-valeurs">dropdown</input-type>
+                    <hint>
+                            <span style="padding:2px;border:1px solid lightcoral;border-image:none;background-color:seashell;">DONNÉE SPÉCIFIÉE À l'INTERNE (équipe DTDM)</span><br/>
+                            Entrez la ou les langues du contenu <strong>principal</strong> du document. Si la langue n'apparaît pas dans la liste, consultez au besoin le Guide de saisie.<br/>
+                            💡 <i>Astuce: Vous pouvez spécifier plus d'une langue en maintenant appuyées les touches «&#xA0;Ctrl&#xA0;» ou «&#xA0;⇧ Maj&#xA0;».</i>
+                    </hint>
+                    <required/>
+                    <visibility>workflow</visibility>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dcterms</dc-schema>
+                    <dc-element>language</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>true</repeatable>
+                    <label>Langue(s)</label>
+                    <type-bind>Enregistrement musical / Musical recording,Partition / Musical notation,Film ou vidéo / Motion picture or video,Ensemble de données / Dataset,Logiciel / Software,Carte géographique / Map,Présentation hors congrès / Non-conference presentation,Contribution à un congrès / Conference object,Matériel didactique / Educational material,Autre / Other</type-bind>
+                    <input-type value-pairs-name="papyrus-langue-valeurs">dropdown</input-type>
+                    <hint>
+                            Entrez la ou les langues du contenu <strong>principal</strong> du document. Si la langue n'apparaît pas dans la liste, veuillez la spécifier dans le champ «&#xA0;Notes internes&#xA0;» à la page précédente. S'il n'y a pas de langue associable au contenu, par exemple s'il s'agit d'un ensemble de données chiffrées ou d'un document iconographique, veuillez sélectionner «&#xA0;Sans objet&#xA0;».<br/>
+                            💡 <i>Astuce: Vous pouvez spécifier plus d'une langue en maintenant appuyées les touches «&#xA0;Ctrl&#xA0;» ou «&#xA0;⇧ Maj&#xA0;».</i>
+                    </hint>
+                    <required/>
+                </field>
+            </row>
+
+            <!-- Sujet -->
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>subject</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>true</repeatable>
+                    <label>Mots-clés</label>
+                    <type-bind>Actes de congrès / Conference proceedings,Revue / Journal,Livre / Book,Rapport / Report,Article,Chapitre de livre / Book chapter</type-bind>
+                    <input-type>tag</input-type>
+                    <hint>
+                            <span style="padding:2px;border:1px solid lightcoral;border-image:none;background-color:seashell;">DONNÉE SPÉCIFIÉE À l'INTERNE (équipe DTDM)</span><br/>
+                            Entrez les descripteurs, mots-clés ou vedette-matières les plus pertinents.<br/>
+                            <b>Chaque mot-clé doit figurer dans une boîte de saisie individuelle</b>. Utilisez le bouton «&#xA0;Ajouter&#xA0;» pour saisir des mots-clés supplémentaires.<br/>
+                            Un mot-clé peut être une expression, par ex. «&#xA0;<i>Organisation du traité de l'Atlantique nord</i>&#xA0;» (<a target="_blank" href="http://www.bib.umontreal.ca/images/theses/MAJ5.x/ajoutermots-cles.jpg">exemple en ligne</a>).
+                            Utilisez les majuscules uniquement pour la première lettre d'un terme et pour les noms propres.
+                    </hint>
+                    <required/>
+                    <visibility>workflow</visibility>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>subject</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>true</repeatable>
+                    <label>Mots-clés</label>
+                    <type-bind>Enregistrement musical / Musical recording,Partition / Musical notation,Film ou vidéo / Motion picture or video,Ensemble de données / Dataset,Logiciel / Software,Carte géographique / Map,Présentation hors congrès / Non-conference presentation,Contribution à un congrès / Conference object,Matériel didactique / Educational material,Autre / Other</type-bind>
+                    <input-type>tag</input-type>
+                    <hint>
+                            Entrez les descripteurs, mots-clés ou vedette-matières les plus pertinents.<br/>
+                            <b>Chaque mot-clé doit figurer dans une boîte de saisie individuelle</b>. Utilisez le bouton «&#xA0;Ajouter&#xA0;» pour saisir des mots-clés supplémentaires.<br/>
+                            Un mot-clé peut être une expression, par ex. «&#xA0;<i>Organisation du traité de l'Atlantique nord</i>&#xA0;» (<a target="_blank" href="http://www.bib.umontreal.ca/images/theses/MAJ5.x/ajoutermots-cles.jpg">exemple en ligne</a>).
+                            Utilisez les majuscules uniquement pour la première lettre d'un terme et pour les noms propres.
+                    </hint>
+                    <required/>
+                </field>
+            </row>
+
+            <!-- Résumé -->
+            <row>
+                <field>
+                    <dc-schema>dcterms</dc-schema>
+                    <dc-element>abstract</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>true</repeatable>
+                    <label>Résumé</label>
+                    <type-bind>Livre / Book,Rapport / Report,Actes de congrès / Conference proceedings,Article,Chapitre de livre / Book chapter</type-bind>
+                    <input-type>textarea</input-type>
+                    <hint>
+                            <span style="padding:2px;border:1px solid lightcoral;border-image:none;background-color:seashell;">DONNÉE SPÉCIFIÉE À l'INTERNE (équipe DTDM)</span><br/>
+                            Entrez, si applicable, le(s) résumé(s) du document.<br/>
+                            Utilisez le bouton «&#xA0;Ajouter&#xA0;» pour saisir un résumé traduit.
+                    </hint>
+                    <required/>
+                    <visibility>workflow</visibility>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dcterms</dc-schema>
+                    <dc-element>abstract</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>true</repeatable>
+                    <label>Résumé</label>
+                    <type-bind>Enregistrement musical / Musical recording,Partition / Musical notation,Film ou vidéo / Motion picture or video,Ensemble de données / Dataset,Logiciel / Software,Carte géographique / Map,Présentation hors congrès / Non-conference presentation,Contribution à un congrès / Conference object,Matériel didactique / Educational material,Autre / Other</type-bind>
+                    <input-type>textarea</input-type>
+                    <hint>
+                            Entrez, si applicable, le(s) résumé(s) du document.<br/>
+                            Utilisez le bouton «&#xA0;Ajouter&#xA0;» pour saisir un résumé traduit.
+                    </hint>
+                    <required/>
+                </field>
+            </row>
+
+            <!-- Table des matières -->
+            <row>
+                <field>
+                    <dc-schema>dcterms</dc-schema>
+                    <dc-element>tableOfContents</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>false</repeatable>
+                    <label>Table des matières</label>
+                    <type-bind>Actes de congrès / Conference proceedings,Revue / Journal,Livre / Book,Rapport / Report,Matériel didactique / Educational material</type-bind>
+                    <input-type>textarea</input-type>
+                    <hint>
+                            <span style="padding:2px;border:1px solid lightcoral;border-image:none;background-color:seashell;">DONNÉE SPÉCIFIÉE À l'INTERNE (équipe DTDM)</span><br/>
+                            Dépouillement : Entrez la table des matières du document. Voir au besoin le Guide de saisie.
+                    </hint>
+                    <required/>
+                    <visibility>workflow</visibility>
+                </field>
+            </row>
+
+            <!-- Autre version linguistique -->
+            <row>
+                <field>
+                    <dc-schema>dcterms</dc-schema>
+                    <dc-element>hasVersion</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>true</repeatable>
+                    <label>Autre(s) version(s) linguistique(s)</label>
+                    <input-type>onebox</input-type>
+                    <hint>
+                            <span style="padding:2px;border:1px solid lightcoral;border-image:none;background-color:seashell;">DONNÉE SPÉCIFIÉE À l'INTERNE (équipe DTDM)</span><br/>
+                            S'il existe une autre version linguistique équivalente du document, entrez ici l'identifiant (URL ou DOI) de cette version.<br/>
+                            Utilisez le bouton «&#xA0;Ajouter&#xA0;» pour ajouter la référence à une autre version. Voir au besoin le Guide de saisie (dcterms.hasversion).
+                    </hint>
+                    <required/>
+                    <visibility>workflow</visibility>
+                </field>
+            </row>
+
+            <!-- Ensemble de données liées -->
+            <row>
+                <field>
+                    <dc-schema>dcterms</dc-schema>
+                    <dc-element>relation</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>true</repeatable>
+                    <label>Ensemble(s) de données de recherche lié(s)</label>
+                    <input-type>onebox</input-type>
+                    <hint>
+                            Si vous désirez référer un ensemble de données produit dans le cadre de vos recherches et en lien avec le document déposé, entrez ici l'identifiant pérenne de cet ensemble de données.<br/>
+                            Utilisez le bouton «&#xA0;Ajouter&#xA0;» pour ajouter la référence à un autre ensemble de données.<br/>
+                            Ex.: doi:10.5683/SP2/9EBRRR
+                            Pour plus de renseignements sur le partage de données, consultez le <a href="https://bib.umontreal.ca/gerer-diffuser/gestion-donnees-recherche">guide des Bibliothèques sur la gestion des données de recherche</a>.
+                    </hint>
+                    <required/>
+                </field>
+            </row>
+
+            <!-- Notes publiques -->
+            <row>
+                <field>
+                    <dc-schema>dcterms</dc-schema>
+                    <dc-element>description</dc-element>
+                    <dc-qualifier/>
+                    <repeatable>true</repeatable>
+                    <label>Note(s) publique(s)</label>
+                    <input-type>textarea</input-type>
+                    <hint>
+                            Inscrivez toute note ou commentaire supplémentaire dans ce champ. Cette note est destinée à être diffusée <strong>publiquement</strong> après révision du contenu.
+                    </hint>
+                    <required/>
+                </field>
+            </row>
+
+        </form>
+
         <!-- Form used for entering in Bitstream/File metadata after uploading a file -->
         <form name="bitstream-metadata">
             <row>
@@ -4068,6 +5015,528 @@
             <pair>
                 <displayed-value>Acoustics (0986)</displayed-value>
                 <stored-value>Acoustics / Acoustique (UMI : 0986)</stored-value>
+            </pair>
+        </value-pairs>
+
+        <!-- Types de document pour les travaux et publications -->
+        <value-pairs value-pairs-name="TP-types-valeurs" dc-term="dc.type">
+            <pair>
+                <displayed-value>Article (forme publiée ou prépublication)</displayed-value>
+                <stored-value>Article</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Revue (numéro entier)</displayed-value>
+                <stored-value>Revue / Journal</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>-----</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Actes de congrès</displayed-value>
+                <stored-value>Actes de congrès / Conference proceedings</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Contribution à un congrès (par ex. un article, une affiche, un enregistrement audio/vidéo d'une présentation)</displayed-value>
+                <stored-value>Contribution à un congrès / Conference object</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Présentation hors congrès</displayed-value>
+                <stored-value>Présentation hors congrès / Non-conference presentation</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>-----</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Livre</displayed-value>
+                <stored-value>Livre / Book</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Chapitre de livre</displayed-value>
+                <stored-value>Chapitre de livre / Book chapter</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>-----</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Rapport</displayed-value>
+                <stored-value>Rapport / Report</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>-----</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Carte géographique</displayed-value>
+                <stored-value>Carte géographique / Map</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Ensemble de données</displayed-value>
+                <stored-value>Ensemble de données / Dataset</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Enregistrement musical</displayed-value>
+                <stored-value>Enregistrement musical / Musical recording</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Film, vidéo (incluant documentaire, court ou long métrage)</displayed-value>
+                <stored-value>Film ou vidéo / Motion picture or video</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Logiciel</displayed-value>
+                <stored-value>Logiciel / Software</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Matériel didactique</displayed-value>
+                <stored-value>Matériel didactique / Educational material</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Partition</displayed-value>
+                <stored-value>Partition / Musical notation</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>-----</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>[Autre] (spécifiez dans le champ « Notes internes » ici bas)</displayed-value>
+                <stored-value>Autre / Other</stored-value>
+            </pair>
+        </value-pairs>
+
+        <!-- Affiliations pour les travaux et publications -->
+        <value-pairs value-pairs-name="TP-affiliations-valeurs" dc-term="dc.contributor.affiliation">
+            <pair>
+                <displayed-value>--- UdeM : FACULTÉS, ÉCOLES ET DÉPARTEMENTS -------------------------------------------</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de l'aménagement</displayed-value>
+                <stored-value>Université de Montréal. Faculté de l'aménagement</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de l'aménagement. École d'architecture</displayed-value>
+                <stored-value>Université de Montréal. Faculté de l'aménagement. École d'architecture</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de l'aménagement. École d'urbanisme et d'architecture de paysage</displayed-value>
+                <stored-value>Université de Montréal. Faculté de l'aménagement. École d'urbanisme et d'architecture de paysage</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de l'aménagement. École de design</displayed-value>
+                <stored-value>Université de Montréal. Faculté de l'aménagement. École de design</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>------------------</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Faculté des arts et des sciences</displayed-value>
+                <stored-value>Université de Montréal. Faculté des arts et des sciences</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>FAS. Département d'anthropologie</displayed-value>
+                <stored-value>Université de Montréal. Faculté des arts et des sciences. Département d'anthropologie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>FAS. Département de biochimie</displayed-value>
+                <stored-value>Université de Montréal. Faculté des arts et des sciences. Département de biochimie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>FAS. Département de chimie</displayed-value>
+                <stored-value>Université de Montréal. Faculté des arts et des sciences. Département de chimie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>FAS. Département de communication</displayed-value>
+                <stored-value>Université de Montréal. Faculté des arts et des sciences. Département de communication</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>FAS. Département de démographie</displayed-value>
+                <stored-value>Université de Montréal. Faculté des arts et des sciences. Département de démographie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>FAS. Département de géographie</displayed-value>
+                <stored-value>Université de Montréal. Faculté des arts et des sciences. Département de géographie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>FAS. Département de linguistique et de traduction</displayed-value>
+                <stored-value>Université de Montréal. Faculté des arts et des sciences. Département de linguistique et de traduction</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>FAS. Département de littératures et de langues du monde</displayed-value>
+                <stored-value>Université de Montréal. Faculté des arts et des sciences. Département de littératures et de langues du monde</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>FAS. Département de mathématiques et de statistique</displayed-value>
+                <stored-value>Université de Montréal. Faculté des arts et des sciences. Département de mathématiques et de statistique</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>FAS. Département de philosophie</displayed-value>
+                <stored-value>Université de Montréal. Faculté des arts et des sciences. Département de philosophie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>FAS. Département de physique</displayed-value>
+                <stored-value>Université de Montréal. Faculté des arts et des sciences. Département de physique</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>FAS. Département de psychologie</displayed-value>
+                <stored-value>Université de Montréal. Faculté des arts et des sciences. Département de psychologie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>FAS. Département de science politique</displayed-value>
+                <stored-value>Université de Montréal. Faculté des arts et des sciences. Département de science politique</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>FAS. Département de sciences biologiques</displayed-value>
+                <stored-value>Université de Montréal. Faculté des arts et des sciences. Département de sciences biologiques</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>FAS. Département de sciences économiques</displayed-value>
+                <stored-value>Université de Montréal. Faculté des arts et des sciences. Département de sciences économiques</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>FAS. Département de sociologie</displayed-value>
+                <stored-value>Université de Montréal. Faculté des arts et des sciences. Département de sociologie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>FAS. Département des littératures de langue française</displayed-value>
+                <stored-value>Université de Montréal. Faculté des arts et des sciences. Département des littératures de langue française</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>FAS. Département d'histoire</displayed-value>
+                <stored-value>Université de Montréal. Faculté des arts et des sciences. Département d'histoire</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>FAS. Département d'histoire de l'art et d'études cinématographiques</displayed-value>
+                <stored-value>Université de Montréal. Faculté des arts et des sciences. Département d'histoire de l'art et d'études cinématographiques</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>FAS. Département d'informatique et de recherche opérationnelle</displayed-value>
+                <stored-value>Université de Montréal. Faculté des arts et des sciences. Département d'informatique et de recherche opérationnelle</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>FAS. École de bibliothéconomie et des sciences de l'information</displayed-value>
+                <stored-value>Université de Montréal. Faculté des arts et des sciences. École de bibliothéconomie et des sciences de l'information</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>FAS. École de criminologie</displayed-value>
+                <stored-value>Université de Montréal. Faculté des arts et des sciences. École de criminologie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>FAS. École de psychoéducation</displayed-value>
+                <stored-value>Université de Montréal. Faculté des arts et des sciences. École de psychoéducation</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>FAS. École de relations industrielles</displayed-value>
+                <stored-value>Université de Montréal. Faculté des arts et des sciences. École de relations industrielles</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>FAS. École de travail social</displayed-value>
+                <stored-value>Université de Montréal. Faculté des arts et des sciences. École de travail social</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>FAS. Institut d'études religieuses</displayed-value>
+                <stored-value>Université de Montréal. Faculté des arts et des sciences. Institut d'études religieuses</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>------------------</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de droit</displayed-value>
+                <stored-value>Université de Montréal. Faculté de droit</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>------------------</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de l'éducation permanente</displayed-value>
+                <stored-value>Université de Montréal. Faculté de l'éducation permanente</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>------------------</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de médecine</displayed-value>
+                <stored-value>Université de Montréal. Faculté de médecine</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de médecine. Département d'anesthésiologie et de médecine de la douleur</displayed-value>
+                <stored-value>Université de Montréal. Faculté de médecine. Département d'anesthésiologie et de médecine de la douleur</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de médecine. Département de biochimie et médecine moléculaire</displayed-value>
+                <stored-value>Université de Montréal. Faculté de médecine. Département de biochimie et médecine moléculaire</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de médecine. Département de chirurgie</displayed-value>
+                <stored-value>Université de Montréal. Faculté de médecine. Département de chirurgie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de médecine. Département d'obstétrique-gynécologie</displayed-value>
+                <stored-value>Université de Montréal. Faculté de médecine. Département d'obstétrique-gynécologie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de médecine. Département d'ophtalmologie</displayed-value>
+                <stored-value>Université de Montréal. Faculté de médecine. Département d'ophtalmologie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de médecine. Département de médecine</displayed-value>
+                <stored-value>Université de Montréal. Faculté de médecine. Département de médecine</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de médecine. Département de médecine de famille et médecine d'urgence</displayed-value>
+                <stored-value>Université de Montréal. Faculté de médecine. Département de médecine de famille et médecine d'urgence</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de médecine. Département de microbiologie, infectiologie et immunologie</displayed-value>
+                <stored-value>Université de Montréal. Faculté de médecine. Département de microbiologie, infectiologie et immunologie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de médecine. Département de neurosciences</displayed-value>
+                <stored-value>Université de Montréal. Faculté de médecine. Département de neurosciences</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de médecine. Département de nutrition</displayed-value>
+                <stored-value>Université de Montréal. Faculté de médecine. Département de nutrition</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de médecine. Département de pathologie et biologie cellulaire</displayed-value>
+                <stored-value>Université de Montréal. Faculté de médecine. Département de pathologie et biologie cellulaire</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de médecine. Département de pédiatrie</displayed-value>
+                <stored-value>Université de Montréal. Faculté de médecine. Département de pédiatrie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de médecine. Département de pharmacologie et physiologie</displayed-value>
+                <stored-value>Université de Montréal. Faculté de médecine. Département de pharmacologie et physiologie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de médecine. Département de psychiatrie et d'addictologie</displayed-value>
+                <stored-value>Université de Montréal. Faculté de médecine. Département de psychiatrie et d'addictologie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de médecine. Département de radiologie, radio-oncologie et médecine nucléaire</displayed-value>
+                <stored-value>Université de Montréal. Faculté de médecine. Département de radiologie, radio-oncologie et médecine nucléaire</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de médecine. École d'orthophonie et d'audiologie</displayed-value>
+                <stored-value>Université de Montréal. Faculté de médecine. École d'orthophonie et d'audiologie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de médecine. École de kinésiologie et des sciences de l'activité physique</displayed-value>
+                <stored-value>Université de Montréal. Faculté de médecine. École de kinésiologie et des sciences de l'activité physique</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de médecine. École de réadaptation</displayed-value>
+                <stored-value>Université de Montréal. Faculté de médecine. École de réadaptation</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>------------------</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de médecine dentaire</displayed-value>
+                <stored-value>Université de Montréal. Faculté de médecine dentaire</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>------------------</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de médecine vétérinaire</displayed-value>
+                <stored-value>Université de Montréal. Faculté de médecine vétérinaire</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>------------------</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de musique</displayed-value>
+                <stored-value>Université de Montréal. Faculté de musique</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>------------------</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Faculté de pharmacie</displayed-value>
+                <stored-value>Université de Montréal. Faculté de pharmacie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>------------------</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Faculté des sciences de l'éducation</displayed-value>
+                <stored-value>Université de Montréal. Faculté des sciences de l'éducation</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>------------------</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Faculté des sciences infirmières</displayed-value>
+                <stored-value>Université de Montréal. Faculté des sciences infirmières</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>------------------</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>École d'optométrie</displayed-value>
+                <stored-value>Université de Montréal. École d'optométrie</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>------------------</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>École de santé publique</displayed-value>
+                <stored-value>Université de Montréal. École de santé publique</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>École de santé publique. Département de gestion, d'évaluation et de politique de santé</displayed-value>
+                <stored-value>Université de Montréal. École de santé publique. Département de gestion, d'évaluation et de politique de santé</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>École de santé publique. Département de médecine sociale et préventive</displayed-value>
+                <stored-value>Université de Montréal. École de santé publique. Département de médecine sociale et préventive</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>École de santé publique. Département de santé environnementale et santé au travail</displayed-value>
+                <stored-value>Université de Montréal. École de santé publique. Département de santé environnementale et santé au travail</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>--- UdeM : SERVICES ------------------------------------------------------</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>Direction des bibliothèques</displayed-value>
+                <stored-value>Université de Montréal. Direction des bibliothèques</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Division de la gestion de documents et des archives</displayed-value>
+                <stored-value>Université de Montréal. Division de la gestion de documents et des archives</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>--- AUTRES ------------------------------------------------------</displayed-value>
+                <stored-value/>
+            </pair>
+            <pair>
+                <displayed-value>[Autre] (préciser dans le champs Notes ici-bas)</displayed-value>
+                <stored-value>Autre</stored-value>
+            </pair>
+        </value-pairs>
+
+        <!-- Versions d'un article -->
+        <value-pairs value-pairs-name="TP-versions-valeurs" dc-term="UdeM_VersionRioxx">
+            <pair>
+                <displayed-value>VERSION ORIGINALE DE L'AUTEUR (souvent appelée "prépublication" ou
+                "preprint", il s'agit de la version soumise à l'éditeur qui n'a pas fait encore
+                l'objet de la validation par les pairs)</displayed-value>
+                <stored-value>Version originale de l'auteur / Author's Original</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>VERSION ACCEPTÉE (souvent appelée "postpublication" ou "postprint",
+                comprend toutes les modifications apportées par le processus de validation par les
+                pairs mais sans la mise en page de l'éditeur)</displayed-value>
+                <stored-value>Version acceptée / Accepted Manuscript</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>VERSION PUBLIÉE (souvent appelée "version de l'éditeur", "PDF final",
+                "formatted version", "version of record", cette version comprend la mise en forme
+                effectuée par l'éditeur)</displayed-value>
+                <stored-value>Version publiée / Version of Record</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Version inconnue (ou ne s'applique pas)</displayed-value>
+                <stored-value>Version inconnue (ou ne s'applique pas) / Unknown version (or not
+                applicable)</stored-value>
+            </pair>
+        </value-pairs>
+
+        <!-- Identifiants d'un TP - liste complète -->
+        <value-pairs value-pairs-name="TP-identifiants-valeurs-tous" dc-term="dc.identifier">
+            <pair>
+                <displayed-value>URL/URI</displayed-value>
+                <stored-value>uri</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>DOI</displayed-value>
+                <stored-value>doi</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ISSN</displayed-value>
+                <stored-value>issn</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ISBN</displayed-value>
+                <stored-value>isbn</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Autre</displayed-value>
+                <stored-value>other</stored-value>
+            </pair>
+        </value-pairs>
+
+        <!-- Identidiants d'un TP - liste restreinte -->
+        <value-pairs value-pairs-name="TP-identifiants-valeurs-restreint" dc-term="dc.identifier">
+            <pair>
+                <displayed-value>URL/URI</displayed-value>
+                <stored-value>uri</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>DOI</displayed-value>
+                <stored-value>doi</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Autre</displayed-value>
+                <stored-value>other</stored-value>
+            </pair>
+        </value-pairs>
+
+        <!-- Embargos -->
+        <value-pairs value-pairs-name="TP-embargo-valeurs" dc-term="dc.date.available">
+            <pair>
+                <displayed-value>Diffusion immédiate du document</displayed-value>
+                <stored-value>NO_RESTRICTION</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Diffusion du document après 6 mois</displayed-value>
+                <stored-value>MONTHS_WITHHELD:6</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Diffusion du document après 1 an</displayed-value>
+                <stored-value>MONTHS_WITHHELD:12</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Diffusion du document après 1 an et demi</displayed-value>
+                <stored-value>MONTHS_WITHHELD:18</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Diffusion du document après 2 ans</displayed-value>
+                <stored-value>MONTHS_WITHHELD:24</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Diffusion du document après 3 ans</displayed-value>
+                <stored-value>MONTHS_WITHHELD:36</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Diffusion du document après 5 ans</displayed-value>
+                <stored-value>MONTHS_WITHHELD:60</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Sous embargo permanent</displayed-value>
+                <stored-value>MONTHS_WITHHELD:1200</stored-value>
             </pair>
         </value-pairs>
 
