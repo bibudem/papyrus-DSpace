@@ -243,12 +243,13 @@
                     <dc-qualifier>other</dc-qualifier>
                     <repeatable>false</repeatable>
                     <label>Sujet principal ProQuest/UMI</label>
-                    <input-type value-pairs-name="TME-sujet-UMI-valeurs">dropdown</input-type>
+                    <input-type>onebox</input-type>
                     <hint>
                             Afin de favoriser l'indexation de votre thèse ou mémoire, indiquez le sujet principal de votre thèse ou mémoire à partir de la
                             <a target="_blank" href="https://pq-static-content.proquest.com/collateral/media2/documents/umi_subjectcategoriesguide_fr.pdf">liste normalisée</a> de sujets ci-dessus provenant de ProQuest/UMI.
                     </hint>
                     <required>Veuillez sélectionner un sujet ProQuest/UMI dans la liste.</required>
+                    <vocabulary>umi</vocabulary>
                 </field>
             </row>
 

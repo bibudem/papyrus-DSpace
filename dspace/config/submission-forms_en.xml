@@ -218,12 +218,13 @@
                     <dc-qualifier>other</dc-qualifier>
                     <repeatable>false</repeatable>
                     <label>ProQuest/UMI subject</label>
-                    <input-type value-pairs-name="TME-sujet-UMI-valeurs">dropdown</input-type>
+                    <input-type>onebox</input-type>
                     <hint>
                             To increase the discoverability of your thesis or dissertation, choose the primary subject of your thesis or dissertation from the following
                             standardized <a target="_blank"  href="https://about.proquest.com/globalassets/proquest/files/pdf-files/subject-categories-academic.pdf">subject list provided by ProQuest/UMI</a>.
                     </hint>
                     <required>You must select a subject from the list.</required>
+                    <vocabulary>umi</vocabulary>
                 </field>
             </row>
 
