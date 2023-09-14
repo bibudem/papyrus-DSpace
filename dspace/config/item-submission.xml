@@ -23,6 +23,7 @@
         <!--    Les processus liés à Papyrus -->
         <name-map collection-handle="123456789/5" submission-name="papyrus-TME"/>   <!-- Collection de test, locale MS -->
         <name-map collection-handle="123456789/10" submission-name="papyrus-TP"/>   <!-- Collection de test, locale MS -->
+        <name-map collection-handle="123456789/12" submission-name="papyrus-PE"/>   <!-- Collection de test, locale MS -->
 
 
         <!-- Sample Entities Collection configuration based on the demo Entities dataset available at:
@@ -114,6 +115,18 @@
         </step-definition>
         <step-definition id="papyrus-TP-form-page-02">
             <heading>papyrus-TP.page-02</heading>
+            <processing-class>org.dspace.app.rest.submit.step.DescribeStep</processing-class>
+            <type>submission-form</type>
+        </step-definition>
+
+        <!-- Premier et deuxième bloc de description pour Papyrus PE (production étudiante) -->
+        <step-definition id="papyrus-PE-form-page-01">
+            <heading>papyrus-PE.page-01</heading>
+            <processing-class>org.dspace.app.rest.submit.step.DescribeStep</processing-class>
+            <type>submission-form</type>
+        </step-definition>
+        <step-definition id="papyrus-PE-form-page-02">
+            <heading>papyrus-PE.page-02</heading>
             <processing-class>org.dspace.app.rest.submit.step.DescribeStep</processing-class>
             <type>submission-form</type>
         </step-definition>
@@ -313,6 +326,23 @@
             <!-- Ensuite on décrit l'objet, première et deuxième partie -->
             <step id="papyrus-TP-form-page-01"/>
             <step id="papyrus-TP-form-page-02"/>
+
+            <step id="upload"/>
+
+        </submission-process>
+
+        <!-- Le processus de soumissions pour Papyrus PE (production étudiante) -->
+        <submission-process name="papyrus-PE">
+
+            <step id="collection"/>
+
+            <!-- On inscrit l'acception de la licence en premier -->
+            <!-- TODO: pas clair en v5.8 s'il y a ça au début-->
+            <step id="license"/>
+
+            <!-- Ensuite on décrit l'objet, première et deuxième partie -->
+            <step id="papyrus-PE-form-page-01"/>
+            <step id="papyrus-PE-form-page-02"/>
 
             <step id="upload"/>
 
