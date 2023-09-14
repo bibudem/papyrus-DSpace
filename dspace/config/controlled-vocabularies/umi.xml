@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node id="TME-sujet-UMI-valeurs" label="Sujets ProQuest / UMI">
+   <isComposedBy>
+      <node id="d2e11"
+            label="Southeast Asian studies / Études du sud-est asiatique (UMI : 0225)"/>
+      <node id="d2e18" label="African studies / Études africaines (UMI : 0293)"/>
+      <node id="d2e25"
+            label="African American studies / Études afro-américaines (UMI : 0296)"/>
+      <node id="d2e32" label="American studies / Études américaines (UMI : 0323)"/>
+      <node id="d2e40" label="Black studies / Études des noirs (UMI : 0325)"/>
+      <node id="d2e47" label="Asian studies / Études asiatiques (UMI : 0342)"/>
+      <node id="d2e54"
+            label="Asian American studies / Études asiatico-américaines (UMI : 0343)"/>
+      <node id="d2e61" label="Baltic studies / Études baltiques (UMI : 0361)"/>
+      <node id="d2e68" label="Canadian studies / Études canadiennes (UMI : 0385)"/>
+      <node id="d2e75" label="Caribbean studies / Études caribéennes (UMI : 0432)"/>
+      <node id="d2e83" label="Classical studies / Études classiques (UMI : 0434)"/>
+      <node id="d2e90"
+            label="East European studies / Études d’Europe orientale (UMI : 0437)"/>
+      <node id="d2e97" label="European studies / Études européennes (UMI : 0440)"/>
+      <node id="d2e104" label="Women's studies / Études féministes (UMI : 0453)"/>
+      <node id="d2e111"
+            label="French Canadian culture / Études canadiennes-françaises (UMI : 0482)"/>
+      <node id="d2e118"
+            label="LGBTQ studies / Études relatives à la communauté LGBTQ (UMI : 0492)"/>
+      <node id="d2e126"
+            label="Holocaust studies / Études sur l’Holocauste (UMI : 0507)"/>
+      <node id="d2e133" label="Islamic studies / Études islamiques (UMI : 0512)"/>
+      <node id="d2e140"
+            label="Latin American studies / Études latino-américaines (UMI : 0550)"/>
+      <node id="d2e147"
+            label="Middle Eastern studies / Études sur le Moyen-Orient (UMI : 0555)"/>
+      <node id="d2e154"
+            label="Near Eastern studies / Études du Proche-Orient (UMI : 0559)"/>
+      <node id="d2e161"
+            label="North African studies / Études nord-africaines (UMI : 0560)"/>
+      <node id="d2e169"
+            label="Pacific Rim studies / Études du littoral du Pacifique (UMI : 0561)"/>
+      <node id="d2e176" label="Regional studies / Études régionales (UMI : 0604)"/>
+      <node id="d2e183"
+            label="Scandinavian studies / Études scandinaves (UMI : 0613)"/>
+      <node id="d2e190" label="Slavic studies / Études slaves (UMI : 0614)"/>
+      <node id="d2e197" label="Ethnic studies / Études ethniques (UMI : 0631)"/>
+      <node id="d2e204"
+            label="South Asian studies / Études sud-asiatiques (UMI : 0638)"/>
+      <node id="d2e212"
+            label="Sub Saharan Africa studies / Études africaines subsahariennes (UMI : 0639)"/>
+      <node id="d2e219"
+            label="South African studies / Études sud-africaines (UMI : 0654)"/>
+      <node id="d2e226" label="Gender studies / Études sur les sexes (UMI : 0733)"/>
+      <node id="d2e233"
+            label="Hispanic American studies / Études hispano-américaines (UMI : 0737)"/>
+      <node id="d2e240"
+            label="Native American studies / Études amérindiennes (UMI : 0740)"/>
+      <node id="d2e247" label="Judaic studies / Études judaïques (UMI : 0751)"/>
+      <node id="d2e262" label="Accounting / Comptabilité (UMI : 0272)"/>
+      <node id="d2e269"
+            label="Business administration / Gestion d'entreprise (UMI : 0310)"/>
+      <node id="d2e276" label="Marketing / Commercialisation (UMI : 0338)"/>
+      <node id="d2e283" label="Arts management / Gestion artistique (UMI : 0424)"/>
+      <node id="d2e290"
+            label="Entrepreneurship / Études en entrepreneuriat (UMI : 0429)"/>
+      <node id="d2e298" label="Sports management / Gestion sportive (UMI : 0430)"/>
+      <node id="d2e305" label="Management / Gestion (UMI : 0454)"/>
+      <node id="d2e312" label="Finance / Financement (UMI : 0508)"/>
+      <node id="d2e319" label="Banking / Études bancaires (UMI : 0770)"/>
+      <node id="d2e333" label="Journalism / Journalisme (UMI : 0391)"/>
+      <node id="d2e341" label="Library science / Bibliothéconomie (UMI : 0399)"/>
+      <node id="d2e348" label="Communication / Communication (UMI : 0459)"/>
+      <node id="d2e355"
+            label="Technical communication / Communication technique (UMI : 0643)"/>
+      <node id="d2e362" label="Web studies / Études du Web (UMI : 0646)"/>
+      <node id="d2e369"
+            label="Mass communication / Communication de masse (UMI : 0708)"/>
+      <node id="d2e376"
+            label="Information science / Science de l’information (UMI : 0723)"/>
+      <node id="d2e391" label="Fashion / Mode (UMI : 0200)"/>
+      <node id="d2e398" label="Music history / Histoire de la musique (UMI : 0210)"/>
+      <node id="d2e405"
+            label="Musical composition / Composition musicale (UMI : 0216)"/>
+      <node id="d2e412" label="Music theory / Théorie de la musique (UMI : 0223)"/>
+      <node id="d2e419" label="Fine arts / Beaux-arts (UMI : 0357)"/>
+      <node id="d2e427" label="Art criticism / Critique de l’art (UMI : 0365)"/>
+      <node id="d2e434" label="Art history / Histoire de l’art (UMI : 0377)"/>
+      <node id="d2e441" label="Dance / Danse (UMI : 0378)"/>
+      <node id="d2e448" label="Design / Conception (UMI : 0389)"/>
+      <node id="d2e455" label="Music / Musique (UMI : 0413)"/>
+      <node id="d2e462" label="Cinematography / Cinématographie (UMI : 0435)"/>
+      <node id="d2e470" label="Theater / Théâtre (UMI : 0465)"/>
+      <node id="d2e477" label="Performing arts / Arts de la scène (UMI : 0641)"/>
+      <node id="d2e484" label="Theater history / Histoire du théâtre (UMI : 0644)"/>
+      <node id="d2e491"
+            label="Film studies / Études cinématographiques (UMI : 0900)"/>
+      <node id="d2e498"
+            label="Musical performances / Prestations musicales (UMI : 0943)"/>
+      <node id="d2e513"
+            label="Landscape architecture / Architecture paysagère (UMI : 0390)"/>
+      <node id="d2e520"
+            label="Architectural engineering / Génie architectural (UMI : 0462)"/>
+      <node id="d2e527" label="Architecture / Architecture (UMI : 0729)"/>
+      <node id="d2e541" label="Art education / Éducation artistique (UMI : 0273)"/>
+      <node id="d2e548"
+            label="Community college education / Enseignement collégial (UMI : 0275)"/>
+      <node id="d2e556"
+            label="Education finance / Finances de l’enseignement (UMI : 0277)"/>
+      <node id="d2e563"
+            label="Home economics education / Enseignement des sciences domestiques (UMI : 0278)"/>
+      <node id="d2e570" label="Language arts / Arts du langage (UMI : 0279)"/>
+      <node id="d2e577"
+            label="Mathematics education / Enseignement des mathématiques (UMI : 0280)"/>
+      <node id="d2e584"
+            label="Bilingual education / Enseignement bilingue (UMI : 0282)"/>
+      <node id="d2e591"
+            label="Educational tests &amp; measurements / Tests de connaissances et mesure psychopédagogique (UMI : 0288)"/>
+      <node id="d2e599"
+            label="Educational sociology / Sociologie pédagogique (UMI : 0340)"/>
+      <node id="d2e606"
+            label="English as a second language / Anglais langue seconde (UMI : 0441)"/>
+      <node id="d2e613"
+            label="Educational evaluation / Évaluation en éducation (UMI : 0443)"/>
+      <node id="d2e620"
+            label="Foreign language education / Enseignement des langues étrangères (UMI : 0444)"/>
+      <node id="d2e627"
+            label="Gifted education / Éducation des surdoués (UMI : 0445)"/>
+      <node id="d2e634"
+            label="Higher education administration / Gestion de l’enseignement supérieur (UMI : 0446)"/>
+      <node id="d2e642"
+            label="Instructional design / Conception pédagogique (UMI : 0447)"/>
+      <node id="d2e649"
+            label="Educational leadership / Leadership en éducation (UMI : 0449)"/>
+      <node id="d2e656"
+            label="Middle school education / Enseignement présecondaire (UMI : 0450)"/>
+      <node id="d2e663"
+            label="Multicultural education / Enseignement multiculturel (UMI : 0455)"/>
+      <node id="d2e670" label="Pedagogy / Pédagogie (UMI : 0456)"/>
+      <node id="d2e677"
+            label="Performing arts education / Enseignement des arts de la scène (UMI : 0457)"/>
+      <node id="d2e685"
+            label="Education policy / Politique en matière d’éducation (UMI : 0458)"/>
+      <node id="d2e692"
+            label="Educational administration / Administration scolaire (UMI : 0514)"/>
+      <node id="d2e699" label="Education / Éducation (UMI : 0515)"/>
+      <node id="d2e706"
+            label="Adult education / Éducation aux adultes (UMI : 0516)"/>
+      <node id="d2e713"
+            label="Early childhood education / Éducation préscolaire (UMI : 0518)"/>
+      <node id="d2e720"
+            label="School counseling / Orientation scolaire (UMI : 0519)"/>
+      <node id="d2e728"
+            label="Education history / Histoire de l'enseignement (UMI : 0520)"/>
+      <node id="d2e735"
+            label="Industrial arts education / Cours de métiers (UMI : 0521)"/>
+      <node id="d2e742"
+            label="Music education / Enseignement de la musique (UMI : 0522)"/>
+      <node id="d2e749"
+            label="Physical education / Éducation physique (UMI : 0523)"/>
+      <node id="d2e756"
+            label="Elementary education / Enseignement primaire (UMI : 0524)"/>
+      <node id="d2e763"
+            label="Educational psychology / Psychologie éducationnelle (UMI : 0525)"/>
+      <node id="d2e771"
+            label="Religious education / Éducation religieuse (UMI : 0527)"/>
+      <node id="d2e778"
+            label="Special education / Éducation spécialisée (UMI : 0529)"/>
+      <node id="d2e785"
+            label="Teacher education / Formation des enseignants (UMI : 0530)"/>
+      <node id="d2e792"
+            label="Secondary education / Enseignement secondaire (UMI : 0533)"/>
+      <node id="d2e799"
+            label="Social sciences education / Enseignement des sciences sociales (UMI : 0534)"/>
+      <node id="d2e806"
+            label="Reading instruction / Enseignement de la lecture (UMI : 0535)"/>
+      <node id="d2e814"
+            label="Continuing education / Éducation permanente (UMI : 0651)"/>
+      <node id="d2e821"
+            label="Health education / Éducation à la santé (UMI : 0680)"/>
+      <node id="d2e828"
+            label="Business education / Enseignement commercial (UMI : 0688)"/>
+      <node id="d2e835"
+            label="Educational technology / Technologie éducative (UMI : 0710)"/>
+      <node id="d2e842"
+            label="Science education / Enseignement des sciences (UMI : 0714)"/>
+      <node id="d2e849"
+            label="Curriculum development / Élaboration de programmes (UMI : 0727)"/>
+      <node id="d2e857"
+            label="Higher education / Enseignement supérieur (UMI : 0745)"/>
+      <node id="d2e864"
+            label="Vocational education / Enseignement professionnel (UMI : 0747)"/>
+      <node id="d2e871"
+            label="Educational philosophy / Philosophie pédagogique (UMI : 0998)"/>
+      <node id="d2e885" label="Black history / Histoire des Noirs (UMI : 0328)"/>
+      <node id="d2e892"
+            label="African history / Histoire de l’Afrique (UMI : 0331)"/>
+      <node id="d2e900" label="Asian history / Histoire de l’Asie (UMI : 0332)"/>
+      <node id="d2e907"
+            label="Middle Eastern history / Histoire du Moyen-Orient (UMI : 0333)"/>
+      <node id="d2e914" label="Canadian history / Histoire du Canada (UMI : 0334)"/>
+      <node id="d2e921"
+            label="European history / Histoire de l’Europe (UMI : 0335)"/>
+      <node id="d2e928"
+            label="Latin American history / Histoire de l’Amérique latine (UMI : 0336)"/>
+      <node id="d2e935"
+            label="American history / Histoire des États-Unis (UMI : 0337)"/>
+      <node id="d2e943"
+            label="History of Oceania / Histoire de l’Océanie (UMI : 0504)"/>
+      <node id="d2e950" label="World history / Histoire du monde (UMI : 0506)"/>
+      <node id="d2e957" label="History / Histoire (UMI : 0578)"/>
+      <node id="d2e964"
+            label="Ancient history / Histoire de l’Antiquité (UMI : 0579)"/>
+      <node id="d2e971" label="Medieval history / Histoire médiévale (UMI : 0581)"/>
+      <node id="d2e978" label="Modern history / Histoire moderne (UMI : 0582)"/>
+      <node id="d2e986"
+            label="Science history / Histoire de la science (UMI : 0585)"/>
+      <node id="d2e993" label="Military history / Histoire militaire (UMI : 0722)"/>
+      <node id="d2e1000"
+            label="Russian history / Histoire de la Russie (UMI : 0724)"/>
+      <node id="d2e1014"
+            label="Creative writing / Création littéraire (UMI : 0203)"/>
+      <node id="d2e1021"
+            label="French literature / Littérature française (UMI : 0207)"/>
+      <node id="d2e1029"
+            label="Translation studies / Études de traduction (UMI : 0215)"/>
+      <node id="d2e1036"
+            label="Italian studies / Littérature italienne (UMI : 0222)"/>
+      <node id="d2e1043" label="Ancient languages / Langues anciennes (UMI : 0289)"/>
+      <node id="d2e1050" label="Linguistics / Linguistique (UMI : 0290)"/>
+      <node id="d2e1057" label="Modern language / Langues modernes (UMI : 0291)"/>
+      <node id="d2e1064"
+            label="Classical literature / Littérature classique (UMI : 0294)"/>
+      <node id="d2e1072"
+            label="Comparative literature / Littérature comparée (UMI : 0295)"/>
+      <node id="d2e1079"
+            label="Medieval literature / Littérature médiévale (UMI : 0297)"/>
+      <node id="d2e1086"
+            label="Modern literature / Littérature moderne (UMI : 0298)"/>
+      <node id="d2e1093"
+            label="Asian literature / Littérature asiatique (UMI : 0305)"/>
+      <node id="d2e1100"
+            label="German literature / Littérature allemande (UMI : 0311)"/>
+      <node id="d2e1107"
+            label="Latin American literature / Littérature latino-américaine (UMI : 0312)"/>
+      <node id="d2e1115"
+            label="Romance literature / Littérature romantique (UMI : 0313)"/>
+      <node id="d2e1122" label="Slavic literature / Littérature slave (UMI : 0314)"/>
+      <node id="d2e1129"
+            label="Middle Eastern literature / Littérature du Moyen-Orient (UMI : 0315)"/>
+      <node id="d2e1136"
+            label="African literature / Littérature africaine (UMI : 0316)"/>
+      <node id="d2e1143"
+            label="Canadian literature / Littérature canadienne (UMI : 0352)"/>
+      <node id="d2e1150"
+            label="French Canadian literature / Littérature canadienne-française (UMI : 0355)"/>
+      <node id="d2e1158"
+            label="Australian literature / Littérature australienne (UMI : 0356)"/>
+      <node id="d2e1165"
+            label="Caribbean literature / Littérature caribéenne (UMI : 0360)"/>
+      <node id="d2e1172"
+            label="Icelandic &amp; Scandinavian literature / Littérature islandaise et scandinave (UMI : 0362)"/>
+      <node id="d2e1179" label="Literature / Littérature (UMI : 0401)"/>
+      <node id="d2e1186"
+            label="American literature / Littérature américaine (UMI : 0591)"/>
+      <node id="d2e1193"
+            label="English literature / Littérature anglaise (UMI : 0593)"/>
+      <node id="d2e1201" label="Language / Langage (UMI : 0679)"/>
+      <node id="d2e1208" label="Rhetoric / Rhétorique (UMI : 0681)"/>
+      <node id="d2e1222" label="Religion / Religion (UMI : 0318)"/>
+      <node id="d2e1229" label="Clergy / Clergé (UMI : 0319)"/>
+      <node id="d2e1236"
+            label="Religious history / Histoire religieuse (UMI : 0320)"/>
+      <node id="d2e1244" label="Biblical studies / Études bibliques (UMI : 0321)"/>
+      <node id="d2e1251"
+            label="Philosophy of religion / Philosophie de la religion (UMI : 0322)"/>
+      <node id="d2e1258" label="Canon law / Loi canonique (UMI : 0375)"/>
+      <node id="d2e1265" label="Divinity / Divinité (UMI : 0376)"/>
+      <node id="d2e1272" label="Epistemology / Épistémologie (UMI : 0393)"/>
+      <node id="d2e1279" label="Ethics / Éthique (UMI : 0394)"/>
+      <node id="d2e1287" label="Logic / Logique (UMI : 0395)"/>
+      <node id="d2e1294" label="Metaphysics / Métaphysique (UMI : 0396)"/>
+      <node id="d2e1301"
+            label="Pastoral counseling / Counselling pastoral (UMI : 0397)"/>
+      <node id="d2e1308"
+            label="Philosophy of science / Philosophie de la science (UMI : 0402)"/>
+      <node id="d2e1315" label="Philosophy / Philosophie (UMI : 0422)"/>
+      <node id="d2e1322" label="Theology / Théologie (UMI : 0469)"/>
+      <node id="d2e1330"
+            label="Comparative religion / Religion comparée (UMI : 0618)"/>
+      <node id="d2e1337" label="Spirituality / Spiritualité (UMI : 0647)"/>
+      <node id="d2e1344" label="Aesthetics / Esthétique (UMI : 0650)"/>
+      <node id="d2e1358"
+            label="Law enforcement / Application de la loi (UMI : 0208)"/>
+      <node id="d2e1365" label="Law / Droit (UMI : 0398)"/>
+      <node id="d2e1373"
+            label="Intellectual property / Propriété intellectuelle (UMI : 0513)"/>
+      <node id="d2e1380" label="Patent law / Droit des brevets (UMI : 0562)"/>
+      <node id="d2e1387"
+            label="International law / Droit international (UMI : 0616)"/>
+      <node id="d2e1394"
+            label="Alternative dispute resolution / Mode alternatif de règlements des conflits (UMI : 0649)"/>
+      <node id="d2e1408" label="Archaeology / Archéologie (UMI : 0324)"/>
+      <node id="d2e1416"
+            label="Cultural anthropology / Anthropologie culturelle (UMI : 0326)"/>
+      <node id="d2e1423"
+            label="Physical anthropology / Anthropologie physique (UMI : 0327)"/>
+      <node id="d2e1430"
+            label="Forensic anthropology / Anthropologie judiciaire (UMI : 0339)"/>
+      <node id="d2e1437"
+            label="Area planning and development / Aménagement et développement de zone (UMI : 0341)"/>
+      <node id="d2e1444" label="Social research / Recherche sociale (UMI : 0344)"/>
+      <node id="d2e1451" label="Folklore / Folklore (UMI : 0358)"/>
+      <node id="d2e1459" label="Geography / Géographie (UMI : 0366)"/>
+      <node id="d2e1466" label="Social work / Travail social (UMI : 0452)"/>
+      <node id="d2e1473" label="Economics / Économie (UMI : 0501)"/>
+      <node id="d2e1480"
+            label="Commerce-Business / Commerce-Entreprise (UMI : 0505)"/>
+      <node id="d2e1487"
+            label="Economic history / Histoire économique (UMI : 0509)"/>
+      <node id="d2e1494"
+            label="Labor economics / Économique du travail (UMI : 0510)"/>
+      <node id="d2e1502" label="Economic theory / Théorie économique (UMI : 0511)"/>
+      <node id="d2e1509" label="Peace studies / Études sur la paix (UMI : 0563)"/>
+      <node id="d2e1516"
+            label="International relations / Relations internationales (UMI : 0601)"/>
+      <node id="d2e1523"
+            label="Political Science / Sciences politiques (UMI : 0615)"/>
+      <node id="d2e1530"
+            label="Public administration / Administration publique (UMI : 0617)"/>
+      <node id="d2e1537" label="Sociology / Sociologie (UMI : 0626)"/>
+      <node id="d2e1545" label="Criminology / Criminologie (UMI : 0627)"/>
+      <node id="d2e1552"
+            label="Individual &amp; family studies / Études familiales et sur l’individu (UMI : 0628)"/>
+      <node id="d2e1559"
+            label="Labor relations / Relations industrielles (UMI : 0629)"/>
+      <node id="d2e1566" label="Public policy / Politique publique (UMI : 0630)"/>
+      <node id="d2e1573"
+            label="Organization theory / Théorie de l’organisation (UMI : 0635)"/>
+      <node id="d2e1580" label="Sociolinguistics / Sociolinguistique (UMI : 0636)"/>
+      <node id="d2e1588" label="Social structure / Structure sociale (UMI : 0700)"/>
+      <node id="d2e1595"
+            label="Organizational behavior / Comportement organisationnel (UMI : 0703)"/>
+      <node id="d2e1602" label="Transportation / Transport (UMI : 0709)"/>
+      <node id="d2e1609" label="Military studies / Études militaires (UMI : 0750)"/>
+      <node id="d2e1616" label="Recreation / Récréation (UMI : 0814)"/>
+      <node id="d2e1623" label="Demography / Démographie (UMI : 0938)"/>
+      <node id="d2e1631" label="Urban planning / Urbanisme (UMI : 0999)"/>
+      <node id="d2e1645"
+            label="Disability studies / Études sur les personnes handicapées (UMI : 0205)"/>
+      <node id="d2e1652" label="Sexuality / Sexualité (UMI : 0213)"/>
+      <node id="d2e1659" label="Biographies / Biographies (UMI : 0304)"/>
+      <node id="d2e1666" label="Food science / Sciences des aliments (UMI : 0359)"/>
+      <node id="d2e1674"
+            label="Alternative energy / Énergies de substitution (UMI : 0363)"/>
+      <node id="d2e1681" label="Home economics / Économie domestique (UMI : 0386)"/>
+      <node id="d2e1688"
+            label="Climate change / Changement climatique (UMI : 0404)"/>
+      <node id="d2e1695"
+            label="Cultural resources management / Gestions des ressources culturelles (UMI : 0436)"/>
+      <node id="d2e1702"
+            label="Information technology / Technologie de l’information (UMI : 0489)"/>
+      <node id="d2e1709"
+            label="Multimedia communications / Communications multimédia (UMI : 0558)"/>
+      <node id="d2e1717"
+            label="Sustainability / Développement durable (UMI : 0640)"/>
+      <node id="d2e1724" label="Museum studies / Études muséales (UMI : 0730)"/>
+      <node id="d2e1731" label="Wood sciences / Sciences du bois (UMI : 0746)"/>
+      <node id="d2e1738" label="Energy / Énergie (UMI : 0791)"/>
+      <node id="d2e1745" label="Textile research / Recherche textile (UMI : 0994)"/>
+      <node id="d2e1760" label="Urban forestry / Foresterie urbaine (UMI : 0281)"/>
+      <node id="d2e1767" label="Agronomy / Agronomie (UMI : 0285)"/>
+      <node id="d2e1774"
+            label="Wildlife management / Gestion de la faune (UMI : 0286)"/>
+      <node id="d2e1781" label="Horticulture / Horticulture (UMI : 0471)"/>
+      <node id="d2e1788" label="Agriculture / Agriculture (UMI : 0473)"/>
+      <node id="d2e1795" label="Animal sciences / Sciences animales (UMI : 0475)"/>
+      <node id="d2e1803" label="Animal diseases / Maladies animales (UMI : 0476)"/>
+      <node id="d2e1810" label="Forestry / Foresterie (UMI : 0478)"/>
+      <node id="d2e1817" label="Plant sciences / Sciences végétales (UMI : 0479)"/>
+      <node id="d2e1824" label="Plant pathology / Pathologie végétale (UMI : 0480)"/>
+      <node id="d2e1831" label="Soil sciences / Science des sols (UMI : 0481)"/>
+      <node id="d2e1838" label="Agriculture economics / Agroéconomie (UMI : 0503)"/>
+      <node id="d2e1846"
+            label="Agriculture education / Enseignement agricole (UMI : 0517)"/>
+      <node id="d2e1853"
+            label="Agriculture engineering / Génie agricole (UMI : 0539)"/>
+      <node id="d2e1860"
+            label="Range management / Aménagement pastoral (UMI : 0777)"/>
+      <node id="d2e1867"
+            label="Aquatic sciences / Sciences aquatiques (UMI : 0792)"/>
+      <node id="d2e1881" label="Music therapy / Musicothérapie (UMI : 0211)"/>
+      <node id="d2e1889" label="Psychobiology / Psychobiologie (UMI : 0349)"/>
+      <node id="d2e1896"
+            label="Behavioral psychology / Psychologie comportementale (UMI : 0384)"/>
+      <node id="d2e1903"
+            label="Social psychology / Psychologie sociale (UMI : 0451)"/>
+      <node id="d2e1910"
+            label="Behavioral sciences / Sciences comportementales (UMI : 0602)"/>
+      <node id="d2e1917"
+            label="Counseling psychology / Psychologie de l’orientation (UMI : 0603)"/>
+      <node id="d2e1924"
+            label="Developmental psychology / Psychologie du développement (UMI : 0620)"/>
+      <node id="d2e1932" label="Psychology / Psychologie (UMI : 0621)"/>
+      <node id="d2e1939"
+            label="Clinical psychology / Psychologie clinique (UMI : 0622)"/>
+      <node id="d2e1946"
+            label="Experimental psychology / Psychologie expérimentale (UMI : 0623)"/>
+      <node id="d2e1953"
+            label="Occupational psychology / Psychologie du travail (UMI : 0624)"/>
+      <node id="d2e1960"
+            label="Personality psychology / Psychologie de la personnalité (UMI : 0625)"/>
+      <node id="d2e1967"
+            label="Quantitative psychology / Psychologie quantitative (UMI : 0632)"/>
+      <node id="d2e1975"
+            label="Cognitive psychology / Psychologie cognitive (UMI : 0633)"/>
+      <node id="d2e1982"
+            label="Physiological psychology / Psychophysiologie (UMI : 0989)"/>
+      <node id="d2e1996" label="Morphology / Morphologie (UMI : 0287)"/>
+      <node id="d2e2003" label="Biology / Biologie (UMI : 0306)"/>
+      <node id="d2e2010"
+            label="Molecular biology / Biologie moléculaire (UMI : 0307)"/>
+      <node id="d2e2018" label="Biostatistics / Biostatistique (UMI : 0308)"/>
+      <node id="d2e2025" label="Botany / Botanique (UMI : 0309)"/>
+      <node id="d2e2032" label="Neurosciences / Neurosciences (UMI : 0317)"/>
+      <node id="d2e2039" label="Entomology / Entomologie (UMI : 0353)"/>
+      <node id="d2e2046" label="Genetics / Génétique (UMI : 0369)"/>
+      <node id="d2e2053"
+            label="Cellular biology / Biologie cellulaire (UMI : 0379)"/>
+      <node id="d2e2061" label="Endocrinology / Endocrinologie (UMI : 0409)"/>
+      <node id="d2e2068" label="Microbiology / Microbiologie (UMI : 0410)"/>
+      <node id="d2e2075"
+            label="Evolution &amp; development / Evolution et développement (UMI : 0412)"/>
+      <node id="d2e2082" label="Histology / Histologie (UMI : 0414)"/>
+      <node id="d2e2089"
+            label="Systematic biology / Biologie systémique (UMI : 0423)"/>
+      <node id="d2e2096" label="Zoology / Zoologie (UMI : 0472)"/>
+      <node id="d2e2104" label="Biochemistry / Biochimie (UMI : 0487)"/>
+      <node id="d2e2111" label="Biomechanics / Biomécanique (UMI : 0648)"/>
+      <node id="d2e2118" label="Bioinformatics / Bioinformatique (UMI : 0715)"/>
+      <node id="d2e2125" label="Parasitology / Parasitologie (UMI : 0718)"/>
+      <node id="d2e2132" label="Physiology / Physiologie (UMI : 0719)"/>
+      <node id="d2e2139" label="Virology / Virologie (UMI : 0720)"/>
+      <node id="d2e2147"
+            label="Developmental biology / Biologie du développement (UMI : 0758)"/>
+      <node id="d2e2154" label="Biophysics / Biophysique (UMI : 0786)"/>
+      <node id="d2e2161" label="Limnology / Limnologie (UMI : 0793)"/>
+      <node id="d2e2175" label="Ecology / Écologie (UMI : 0329)"/>
+      <node id="d2e2182" label="Macroecology / Macro-écologie (UMI : 0420)"/>
+      <node id="d2e2190" label="Paleoecology / Paléoécologie (UMI : 0426)"/>
+      <node id="d2e2204" label="Bioengineering / Bioingénierie (UMI : 0202)"/>
+      <node id="d2e2211"
+            label="Hydraulic engineering / Ingénierie hydraulique (UMI : 0220)"/>
+      <node id="d2e2218" label="Geotechnology / Géotechnique (UMI : 0428)"/>
+      <node id="d2e2225"
+            label="Computer engineering / Génie informatique (UMI : 0464)"/>
+      <node id="d2e2233"
+            label="Geological engineering / Génie géologique (UMI : 0466)"/>
+      <node id="d2e2240"
+            label="Geophysical engineering / Génie géophysique (UMI : 0467)"/>
+      <node id="d2e2247" label="Naval engineering / Génie naval (UMI : 0468)"/>
+      <node id="d2e2254" label="Engineering / Génie (UMI : 0537)"/>
+      <node id="d2e2261"
+            label="Aerospace engineering / Génie aérospatial (UMI : 0538)"/>
+      <node id="d2e2268"
+            label="Automotive engineering / Génie des véhicules automoteurs (UMI : 0540)"/>
+      <node id="d2e2276"
+            label="Biomedical engineering / Génie biomédical (UMI : 0541)"/>
+      <node id="d2e2283" label="Chemical engineering / Génie chimique (UMI : 0542)"/>
+      <node id="d2e2290" label="Civil engineering / Génie civil (UMI : 0543)"/>
+      <node id="d2e2297"
+            label="Electrical engineering / Génie électrique (UMI : 0544)"/>
+      <node id="d2e2304"
+            label="Industrial engineering / Génie industriel (UMI : 0546)"/>
+      <node id="d2e2311" label="Ocean engineering / Génie océanique (UMI : 0547)"/>
+      <node id="d2e2319"
+            label="Mechanical engineering / Génie mécanique (UMI : 0548)"/>
+      <node id="d2e2326"
+            label="Packaging / Conditionnement et emballage (UMI : 0549)"/>
+      <node id="d2e2333" label="Mining / Exploitation (UMI : 0551)"/>
+      <node id="d2e2340" label="Nuclear engineering / Génie nucléaire (UMI : 0552)"/>
+      <node id="d2e2347" label="Nanotechnology / Nanotechnologie (UMI : 0652)"/>
+      <node id="d2e2354"
+            label="Petroleum engineering / Génie pétrolier (UMI : 0765)"/>
+      <node id="d2e2362" label="Robotics / Robotique (UMI : 0771)"/>
+      <node id="d2e2369" label="System science / Science des systèmes (UMI : 0790)"/>
+      <node id="d2e2376" label="Plastics / Matières plastiques (UMI : 0795)"/>
+      <node id="d2e2383"
+            label="Operations research / Recherche opérationnelle (UMI : 0796)"/>
+      <node id="d2e2390"
+            label="Artificial intelligence / Intelligence artificielle (UMI : 0800)"/>
+      <node id="d2e2397" label="Computer science / Informatique (UMI : 0984)"/>
+      <node id="d2e2412"
+            label="Wildlife conservation / Conservation de la faune (UMI : 0284)"/>
+      <node id="d2e2419"
+            label="Environmental philosophy / Philosophie environnementale (UMI : 0392)"/>
+      <node id="d2e2426"
+            label="Environmental geology / Géologie de l’environnement (UMI : 0407)"/>
+      <node id="d2e2433"
+            label="Conservation biology / Biologie de conservation (UMI : 0408)"/>
+      <node id="d2e2440"
+            label="Environmental economics / Économie de l’environnement (UMI : 0438)"/>
+      <node id="d2e2448"
+            label="Environmental law / Droit environnemental (UMI : 0439)"/>
+      <node id="d2e2455"
+            label="Environmental education / Formation en environnement (UMI : 0442)"/>
+      <node id="d2e2462"
+            label="Environmental health / Santé environnementale (UMI : 0470)"/>
+      <node id="d2e2469"
+            label="Environmental management / Gestion de l’environnement (UMI : 0474)"/>
+      <node id="d2e2476"
+            label="Environmental studies / Études de l’environnement (UMI : 0477)"/>
+      <node id="d2e2483"
+            label="Natural resource management / Gestion des ressources naturelles (UMI : 0528)"/>
+      <node id="d2e2491"
+            label="Land use planning / Aménagement du territoire (UMI : 0536)"/>
+      <node id="d2e2498"
+            label="Water resources management / Gestion des ressources en eau (UMI : 0595)"/>
+      <node id="d2e2505"
+            label="Environmental justice / Justice environnementale (UMI : 0619)"/>
+      <node id="d2e2512"
+            label="Environmental science / Science de l’environnement (UMI : 0768)"/>
+      <node id="d2e2519"
+            label="Environmental engineering / Génie environnemental (UMI : 0775)"/>
+      <node id="d2e2534" label="Aeronomy / Aéronomie (UMI : 0367)"/>
+      <node id="d2e2541"
+            label="Physical geography / Géographie physique (UMI : 0368)"/>
+      <node id="d2e2548"
+            label="Geographic information science and geodesy / Géomatique et géodésie (UMI : 0370)"/>
+      <node id="d2e2555"
+            label="Atmospheric chemistry / Chimie atmosphérique (UMI : 0371)"/>
+      <node id="d2e2562" label="Geology / Géologie (UMI : 0372)"/>
+      <node id="d2e2569" label="Geophysics / Géophysique (UMI : 0373)"/>
+      <node id="d2e2577"
+            label="Hydrologic sciences / Sciences hydrologiques (UMI : 0388)"/>
+      <node id="d2e2584"
+            label="Chemical oceanography / Océanographie chimique (UMI : 0403)"/>
+      <node id="d2e2591"
+            label="Continental dynamics / Dynamique continentale (UMI : 0406)"/>
+      <node id="d2e2598" label="Mineralogy / Minéralogie (UMI : 0411)"/>
+      <node id="d2e2605"
+            label="Physical oceanography / Océanographie physique (UMI : 0415)"/>
+      <node id="d2e2612"
+            label="Biological oceanography / Océanographie biologique (UMI : 0416)"/>
+      <node id="d2e2620" label="Paleontology / Paléontologie (UMI : 0418)"/>
+      <node id="d2e2627" label="Biogeochemistry / Biogéochimie (UMI : 0425)"/>
+      <node id="d2e2634" label="Geobiology / Géobiologie (UMI : 0483)"/>
+      <node id="d2e2641" label="Geomorphology / Géomorphologie (UMI : 0484)"/>
+      <node id="d2e2648" label="Marine geology / Géologie marine (UMI : 0556)"/>
+      <node id="d2e2655" label="Meteorology / Météorologie (UMI : 0557)"/>
+      <node id="d2e2663"
+            label="Petroleum geology / Géologie du pétrole (UMI : 0583)"/>
+      <node id="d2e2670" label="Petrology / Pétrologie (UMI : 0584)"/>
+      <node id="d2e2677" label="Planetology / Planétologie (UMI : 0590)"/>
+      <node id="d2e2684"
+            label="Plate tectonics / Tectonique des plaques (UMI : 0592)"/>
+      <node id="d2e2691"
+            label="Sedimentary geology / Géologie sédimentaire (UMI : 0594)"/>
+      <node id="d2e2698"
+            label="Paleoclimate science / Paléoclimatologie (UMI : 0653)"/>
+      <node id="d2e2706"
+            label="Atmospheric sciences / Sciences atmosphériques (UMI : 0725)"/>
+      <node id="d2e2713" label="Remote sensing / Télédétection (UMI : 0799)"/>
+      <node id="d2e2720" label="Geochemistry / Géochimie (UMI : 0996)"/>
+      <node id="d2e2734" label="Optometry / Optométrie (UMI : 0212)"/>
+      <node id="d2e2741" label="Therapy / Thérapie (UMI : 0214)"/>
+      <node id="d2e2749" label="Audiology / Audiologie (UMI : 0300)"/>
+      <node id="d2e2756" label="Mental health / Santé mentale (UMI : 0347)"/>
+      <node id="d2e2763" label="Gerontology / Gérontologie (UMI : 0351)"/>
+      <node id="d2e2770"
+            label="Occupational safety / Sécurité de l'emploi (UMI : 0354)"/>
+      <node id="d2e2777" label="Obstetrics / Obstétrique (UMI : 0380)"/>
+      <node id="d2e2784" label="Ophthalmology / Ophtalmologie (UMI : 0381)"/>
+      <node id="d2e2792" label="Physical therapy / Physiothérapie (UMI : 0382)"/>
+      <node id="d2e2799" label="Toxicology / Toxicologie (UMI : 0383)"/>
+      <node id="d2e2806" label="Pharmacology / Pharmacologie (UMI : 0419)"/>
+      <node id="d2e2813" label="Speech therapy / Orthophonie (UMI : 0460)"/>
+      <node id="d2e2820" label="Aging / Vieillissement (UMI : 0493)"/>
+      <node id="d2e2827"
+            label="Alternative medicine / Médicine alternative (UMI : 0496)"/>
+      <node id="d2e2835" label="Medical ethics / Éthique médicale (UMI : 0497)"/>
+      <node id="d2e2842" label="Occupational therapy / Ergothérapie (UMI : 0498)"/>
+      <node id="d2e2849" label="Osteopathic medicine / Ostéopathie (UMI : 0499)"/>
+      <node id="d2e2856"
+            label="Public health education / Enseignement de la santé publique (UMI : 0500)"/>
+      <node id="d2e2863" label="Medicine / Médecine (UMI : 0564)"/>
+      <node id="d2e2870"
+            label="Health sciences / Sciences de la santé (UMI : 0566)"/>
+      <node id="d2e2878" label="Dentistry / Médecine dentaire (UMI : 0567)"/>
+      <node id="d2e2885" label="Nursing / Sciences infirmières (UMI : 0569)"/>
+      <node id="d2e2892" label="Nutrition / Nutrition (UMI : 0570)"/>
+      <node id="d2e2899" label="Pathology / Pathologie (UMI : 0571)"/>
+      <node id="d2e2906"
+            label="Pharmaceutical sciences / Sciences pharmaceutiques (UMI : 0572)"/>
+      <node id="d2e2913" label="Public health / Santé publique (UMI : 0573)"/>
+      <node id="d2e2921" label="Medical imaging / Imagerie médicale (UMI : 0574)"/>
+      <node id="d2e2928" label="Kinesiology / Kinésiologie (UMI : 0575)"/>
+      <node id="d2e2935" label="Surgery / Chirurgie (UMI : 0576)"/>
+      <node id="d2e2942" label="Epidemiology / Épidémiologie (UMI : 0766)"/>
+      <node id="d2e2949"
+            label="Health care management / Gestion des soins de santé (UMI : 0769)"/>
+      <node id="d2e2956"
+            label="Veterinary medicine / Sciences vétérinaires (UMI : 0778)"/>
+      <node id="d2e2964" label="Immunology / Immunologie (UMI : 0982)"/>
+      <node id="d2e2971" label="Oncology / Oncologie (UMI : 0992)"/>
+      <node id="d2e2985"
+            label="Fluid mechanics / Mécanique des fluides (UMI : 0206)"/>
+      <node id="d2e2992" label="Applied physics / Physique appliquée (UMI : 0217)"/>
+      <node id="d2e2999"
+            label="Computational physics / Physique computationnelle (UMI : 0218)"/>
+      <node id="d2e3007"
+            label="Statistical physics / Physique statistique (UMI : 0219)"/>
+      <node id="d2e3014"
+            label="Computational chemistry / Chimie computationnelle (UMI : 0221)"/>
+      <node id="d2e3021" label="Mechanics / Mécanique (UMI : 0346)"/>
+      <node id="d2e3028" label="Thermodynamics / Thermodynamique (UMI : 0348)"/>
+      <node id="d2e3035"
+            label="Applied mathematics / Mathématiques appliquées (UMI : 0364)"/>
+      <node id="d2e3042" label="Mathematics / Mathématiques (UMI : 0405)"/>
+      <node id="d2e3050"
+            label="Molecular chemistry / Chimie moléculaire (UMI : 0431)"/>
+      <node id="d2e3057" label="Statistics / Statistiques (UMI : 0463)"/>
+      <node id="d2e3064" label="Chemistry / Chimie (UMI : 0485)"/>
+      <node id="d2e3071"
+            label="Analytical chemistry / Chimie analytique (UMI : 0486)"/>
+      <node id="d2e3078" label="Inorganic chemistry / Chimie minérale (UMI : 0488)"/>
+      <node id="d2e3085" label="Organic chemistry / Chimie organique (UMI : 0490)"/>
+      <node id="d2e3093" label="Physical chemistry / Chimie physique (UMI : 0494)"/>
+      <node id="d2e3100"
+            label="Polymer chemistry / Chimie des polymères (UMI : 0495)"/>
+      <node id="d2e3107" label="Nanoscience / Nanoscience (UMI : 0565)"/>
+      <node id="d2e3114" label="Astrophysics / Astrophysique (UMI : 0596)"/>
+      <node id="d2e3121"
+            label="High temperature physics / Physique des hautes températures (UMI : 0597)"/>
+      <node id="d2e3128"
+            label="Low temperature physics / Physique des basses températures (UMI : 0598)"/>
+      <node id="d2e3136" label="Quantum physics / Physique quantique (UMI : 0599)"/>
+      <node id="d2e3143" label="Physics / Physique (UMI : 0605)"/>
+      <node id="d2e3150" label="Astronomy / Astronomie (UMI : 0606)"/>
+      <node id="d2e3157" label="Electromagnetics / Électromagnétique (UMI : 0607)"/>
+      <node id="d2e3164"
+            label="Molecular physics / Physique moléculaire (UMI : 0609)"/>
+      <node id="d2e3171"
+            label="Condensed matter physics / Physique de la matière condensée (UMI : 0611)"/>
+      <node id="d2e3179"
+            label="Theoretical mathematics / Mathématiques théoriques (UMI : 0642)"/>
+      <node id="d2e3186" label="Nuclear chemistry / Chimie nucléaire (UMI : 0738)"/>
+      <node id="d2e3193" label="Atomic physics / Physique atomique (UMI : 0748)"/>
+      <node id="d2e3200" label="Optics / Optique (UMI : 0752)"/>
+      <node id="d2e3207"
+            label="Theoretical physics / Physique théorique (UMI : 0753)"/>
+      <node id="d2e3214"
+            label="Nuclear physics and radiation / Physique et rayonnement nucléaires (UMI : 0756)"/>
+      <node id="d2e3222" label="Plasma physics / Physique des plasmas (UMI : 0759)"/>
+      <node id="d2e3229"
+            label="Materials science / Science des matériaux (UMI : 0794)"/>
+      <node id="d2e3236"
+            label="High energy physics / Physique des particules (UMI : 0798)"/>
+      <node id="d2e3243" label="Acoustics / Acoustique (UMI : 0986)"/>
+   </isComposedBy>
+</node>
