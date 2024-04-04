@@ -190,7 +190,9 @@
                              codirecteurs ou codirectrices.
                            	<b> Ne pas saisir le nom des autres membres du jury.</b>
                     </hint>
+
                     <required>Veuillez inscrire le nom de votre directeur ou de votre directrice de recherche.</required>
+
                 </field>
             </row>
 
@@ -455,7 +457,9 @@
                             S'il s'agit d'une version publiée, un identifiant unique tel l'<strong>ISBN</strong> du livre et la pagination du chapitre suffisent.<br/>
                             Pour toute autre version, entrez le titre du livre, l'édition (si applicable), la pagination du chapitre (si connue), et indiquez la date de cette version.
                     </hint>
+
                     <required>Vous devez inscrire la référence du chapitre de livre.</required>
+
                 </field>
             </row>
 
@@ -1414,7 +1418,9 @@
                             Entrez le nom et prénom complet du(des) auteur(s) tels qu'ils figurent sur la page de titre du travail.<br/>
                             Utilisez le bouton «&#xA0;Ajouter&#xA0;» pour saisir les coauteurs.
                     </hint>
+
                     <required>Vous devez inscrire nom et prénom des auteurs.</required>
+
                 </field>
             </row>
             <row>

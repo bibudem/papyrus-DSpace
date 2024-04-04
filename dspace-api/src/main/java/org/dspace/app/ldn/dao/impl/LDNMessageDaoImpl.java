@@ -12,12 +12,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Order;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
 
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Order;
+import jakarta.persistence.criteria.Predicate;
+import jakarta.persistence.criteria.Root;
 import org.apache.logging.log4j.Logger;
 import org.dspace.app.ldn.LDNMessageEntity;
 import org.dspace.app.ldn.LDNMessageEntity_;
@@ -48,6 +48,29 @@ public class LDNMessageDaoImpl extends AbstractHibernateDAO<LDNMessageEntity> im
             .add(criteriaBuilder.equal(root.get(LDNMessageEntity_.queueStatus), LDNMessageEntity.QUEUE_STATUS_QUEUED));
         andPredicates.add(criteriaBuilder.lessThan(root.get(LDNMessageEntity_.queueAttempts), max_attempts));
         andPredicates.add(criteriaBuilder.lessThan(root.get(LDNMessageEntity_.queueTimeout), new Date()));
+        criteriaQuery.where(criteriaBuilder.and(andPredicates.toArray(new Predicate[] {})));
+        List<Order> orderList = new LinkedList<>();
+        orderList.add(criteriaBuilder.desc(root.get(LDNMessageEntity_.queueAttempts)));
+        orderList.add(criteriaBuilder.asc(root.get(LDNMessageEntity_.queueLastStartTime)));
+        criteriaQuery.orderBy(orderList);
+        List<LDNMessageEntity> result = list(context, criteriaQuery, false, LDNMessageEntity.class, -1, -1);
+        if (result == null || result.isEmpty()) {
+            log.debug("No LDN messages found to be processed");
+        }
+        return result;
+    }
+
+    @Override
+    public List<LDNMessageEntity> findMessagesToBeReprocessed(Context context) throws SQLException {
+        // looking for LDN Messages to be reprocessed message
+        CriteriaBuilder criteriaBuilder = getCriteriaBuilder(context);
+        CriteriaQuery<LDNMessageEntity> criteriaQuery = getCriteriaQuery(criteriaBuilder, LDNMessageEntity.class);
+        Root<LDNMessageEntity> root = criteriaQuery.from(LDNMessageEntity.class);
+        criteriaQuery.select(root);
+        List<Predicate> andPredicates = new ArrayList<>(1);
+        andPredicates
+            .add(criteriaBuilder.equal(root.get(LDNMessageEntity_.queueStatus),
+                LDNMessageEntity.QUEUE_STATUS_QUEUED_FOR_RETRY));
         criteriaQuery.where(criteriaBuilder.and(andPredicates.toArray(new Predicate[] {})));
         List<Order> orderList = new LinkedList<>();
         orderList.add(criteriaBuilder.desc(root.get(LDNMessageEntity_.queueAttempts)));
